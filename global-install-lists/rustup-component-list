@@ -1,0 +1,9 @@
+cargo-x86_64-apple-darwin
+clippy-x86_64-apple-darwin
+rust-docs-x86_64-apple-darwin
+rust-src
+rust-std-x86_64-apple-darwin
+rustc-x86_64-apple-darwin
+rustfmt-x86_64-apple-darwin
+
+# Not with rustup, but install rust-analyzer: https://rust-analyzer.github.io/manual.html#installation

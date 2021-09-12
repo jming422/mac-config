@@ -1,0 +1,16 @@
+[user]
+	name = Jonathan Ming
+	email = jming422@gmail.com
+	signingkey = 8DF093928BE30B9B
+[core]
+	excludesFile = ~/.gitignore_global
+[merge]
+	tool = ediff
+[commit]
+	gpgsign = true
+[github]
+	user = jming422
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false
