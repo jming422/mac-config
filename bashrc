@@ -39,6 +39,8 @@ fi
 
 # export SOURCEKIT_TOOLCHAIN_PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain"
 
+export XDG_CONFIG_HOME="~/.config"
+
 # Plugins, completions, etc.
 HOMEBREW_PREFIX=$(brew --prefix)
 export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
