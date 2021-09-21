@@ -131,9 +131,6 @@
 (add-to-list 'default-frame-alist
 	     '(font . "FiraCode Nerd Font-12"))
 (setq-default fill-column 120)
-(customize-set-variable 'display-time-default-load-average nil)
-(customize-set-variable 'display-time-day-and-date t)
-(display-time)
 
 (use-package doom-themes
   :demand t
@@ -954,6 +951,7 @@
   :bind (("s-t" . vterm)
 	 (:map vterm-mode-map
 	       ("C-k" . vterm-send-C-k)))
+  :hook (vterm-mode . (lambda () (setq-local global-hl-line-mode nil)))
   :config
   (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
