@@ -27,6 +27,7 @@
 	magit-previous-line
 	magit-section-backward
 	mark-sexp
+	markdown-electric-backquote
 	markdown-outdent-or-delete
 	mc-place-stop
 	org-beginning-of-line

@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 source ~/.bashrc
 
 # Disable XON/XOFF so that C-s does forward i-search

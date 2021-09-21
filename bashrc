@@ -1,7 +1,8 @@
+# -*- mode: sh; -*-
 # Globally desirable aliases
 alias activate="source venv/bin/activate"
 alias ..="cd .."
-alias cdf="cd ~/docs/focus"
+alias cdf="cd ~/Documents/focus"
 alias grep="grep --color=auto"
 alias l="ll"
 alias ll="ls -alh"
@@ -16,6 +17,9 @@ alias crap='ps -ef | grep scrape'
 alias rek='kill -KILL'
 
 eval "$(starship init bash)"
+eval "$(direnv hook bash)"
+
+export XDG_CONFIG_HOME="~/.config"
 
 # Terminal modifiers
 # PS1="\A \w \$ "
@@ -38,8 +42,6 @@ if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
 fi
 
 # export SOURCEKIT_TOOLCHAIN_PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain"
-
-export XDG_CONFIG_HOME="~/.config"
 
 # Plugins, completions, etc.
 HOMEBREW_PREFIX=$(brew --prefix)
