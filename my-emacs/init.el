@@ -308,7 +308,7 @@
   :demand t
   :custom
   (undo-tree-auto-save-history t)
-  (undo-tree-history-directory-alist '(("." . (locate-user-emacs-file "undo-hist"))))
+  (undo-tree-history-directory-alist `(("." . ,(locate-user-emacs-file "undo-hist"))))
   :bind ("s-/" . undo-tree-visualize)
   :config
   (global-undo-tree-mode))
