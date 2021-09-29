@@ -52,3 +52,4 @@
 (package! emacs-everywhere)
 (package! prettier-js)
 (package! evil-cleverparens)
+(package! crdt :recipe (:host nil :repo "https://code.librehq.com/qhong/crdt.el"))
