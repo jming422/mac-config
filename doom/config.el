@@ -90,7 +90,21 @@
 
 (after! emacs-everywhere
   (setq emacs-everywhere-markdown-apps '("Discord" "Slack"))
-  (setq emacs-everywhere-frame-name-format "Emacs Everywhere"))
+  (setq emacs-everywhere-frame-name-format "Emacs Everywhere")
+
+  ;; This is the same as the default, except it does not force org mode when pandoc is available; it uses markdown mode
+  ;; for markdown flavored windows and org mode for everything else. This is because pandoc doesn't do a 1:1 conversion
+  ;; from org to markdown and the output doesn't get formatted with Prettier like it would if I was just writing in
+  ;; markdown-mode.
+  (setq emacs-everywhere-init-hooks
+	`(emacs-everywhere-set-frame-name
+	  emacs-everywhere-set-frame-position
+	  ,(if (fboundp 'markdown-mode)
+	       #'emacs-everywhere-major-mode-org-or-markdown
+	     #'text-mode)
+	  emacs-everywhere-insert-selection
+	  emacs-everywhere-remove-trailing-whitespace
+	  emacs-everywhere-init-spell-check)))
 
 (add-hook! (rjsx-mode yaml-mode css-mode json-mode typescript-mode)
   (prettier-js-mode))
