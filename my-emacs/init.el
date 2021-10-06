@@ -273,25 +273,35 @@
   (global-set-key (kbd "s-c") nil)
   (global-set-key (kbd "s-c s-d") #'dash-at-point))
 
-(use-package spotify
-  :ensure nil
-  :load-path "git-lisp/spotify.el/"
-  :custom
-  (spotify-transport (if (eq system-type 'darwin) 'apple 'connect))
-  (spotify-player-status-format "♪%p♪ ")
-  (spotify-player-status-playing-text "▶")
-  (spotify-player-status-paused-text "▌▌")
-  (spotify-player-status-stopped-text "■")
-  :bind-keymap ("M-m" . spotify-command-map)
-  :config
-  (global-spotify-remote-mode))
-
+;; (use-package spotify
+;;   :ensure nil
+;;   :load-path "git-lisp/spotify.el/"
+;;   :custom
+;;   (spotify-transport (if (eq system-type 'darwin) 'apple 'connect))
+;;   (spotify-player-status-format "♪%p♪ ")
+;;   (spotify-player-status-playing-text "▶")
+;;   (spotify-player-status-paused-text "▌▌")
+;;   (spotify-player-status-stopped-text "■")
+;;   :bind-keymap ("M-m" . spotify-command-map)
+;;   :config
+;;   (global-spotify-remote-mode))
 
 (use-package emacs-everywhere
   :custom
   (emacs-everywhere-markdown-apps '("Discord" "Slack"))
-  (emacs-everywhere-frame-name-format "Emacs Everywhere"))
-
+  (emacs-everywhere-frame-name-format "Emacs Everywhere")
+  ;; This is the same as the default, except it does not force org mode when pandoc is available; it uses markdown mode
+  ;; for markdown flavored windows and org mode for everything else. This is because pandoc doesn't do a 1:1 conversion
+  ;; from org to markdown and the output doesn't get formatted with Prettier like it would if I was just writing in
+  ;; markdown-mode.
+  (emacs-everywhere-init-hooks `(emacs-everywhere-set-frame-name
+				 emacs-everywhere-set-frame-position
+				 ,(if (fboundp 'markdown-mode)
+				      #'emacs-everywhere-major-mode-org-or-markdown
+				    #'text-mode)
+				 emacs-everywhere-insert-selection
+				 emacs-everywhere-remove-trailing-whitespace
+				 emacs-everywhere-init-spell-check)))
 
 ;; Region/selection
 (use-package expand-region

@@ -74,6 +74,7 @@
 	counsel-M-x
 	counsel-grep-or-swiper
 	dap-tooltip-mouse-motion
+	handle-switch-frame
 	mc-place
 	org-backward-paragraph
 	org-kill-note-or-show-branches
