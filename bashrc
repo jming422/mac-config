@@ -19,7 +19,7 @@ alias rek='kill -KILL'
 eval "$(starship init bash)"
 eval "$(direnv hook bash)"
 
-export XDG_CONFIG_HOME="~/.config"
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Terminal modifiers
 # PS1="\A \w \$ "

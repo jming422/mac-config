@@ -53,3 +53,4 @@
 (package! prettier-js)
 (package! evil-cleverparens)
 (package! crdt :recipe (:host nil :repo "https://code.librehq.com/qhong/crdt.el"))
+(package! map :pin "bb50dba")
