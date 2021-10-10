@@ -54,7 +54,8 @@
 
 ;; Misc. config & variables
 (setq auth-sources '("~/.authinfo.gpg"))
-(load! "../my-emacs/mysecrets.el")
+(when (file-exists-p "../my-emacs/mysecrets.el")
+  (load! "../my-emacs/mysecrets.el"))
 
 
 ;; Here are some additional functions/macros that could help you configure Doom:
