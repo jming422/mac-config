@@ -53,7 +53,8 @@
 (setq display-line-numbers-type t)
 
 ;; Misc. config & variables
-(setq auth-sources '("~/.authinfo.gpg"))
+(unless (eq system-type 'darwin)
+  (setq auth-sources '("~/.authinfo.gpg")))
 (when (file-exists-p "../my-emacs/mysecrets.el")
   (load! "../my-emacs/mysecrets.el"))
 
