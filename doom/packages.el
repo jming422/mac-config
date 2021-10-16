@@ -54,3 +54,5 @@
 (package! evil-cleverparens)
 (package! crdt :recipe (:host nil :repo "https://code.librehq.com/qhong/crdt.el"))
 (package! map :pin "bb50dba")
+(unpin! evil-easymotion)
+(package! evil-easymotion :recipe (:host github :repo "CloseToZero/evil-easymotion" :branch "master"))

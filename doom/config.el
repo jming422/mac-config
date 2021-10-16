@@ -125,12 +125,13 @@
   (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
 ;; Custom functions & bindings
-(global-set-key (kbd "M-/") 'hippie-expand)
-(global-set-key (kbd "C-§") 'ignore)
-(global-set-key (kbd "<XF86AudioRaiseVolume>") 'ignore)
-(global-set-key (kbd "<XF86AudioLowerVolume>") 'ignore)
-(global-set-key (kbd "<XF86AudioMute>") 'ignore)
-(global-set-key (kbd "<XF86AudioPlay>") 'ignore)
+(global-set-key (kbd "M-/") #'hippie-expand)
+(global-set-key (kbd "H-SPC") #'just-one-space) ;; because on macOS I use M-SPC for Spotlight
+(global-set-key (kbd "C-§") #'ignore)
+(global-set-key (kbd "<XF86AudioRaiseVolume>") #'ignore)
+(global-set-key (kbd "<XF86AudioLowerVolume>") #'ignore)
+(global-set-key (kbd "<XF86AudioMute>") #'ignore)
+(global-set-key (kbd "<XF86AudioPlay>") #'ignore)
 
 
 (defun js-refactor-const-to-function ()
