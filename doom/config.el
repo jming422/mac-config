@@ -55,9 +55,6 @@
 ;; Misc. config & variables
 (unless (eq system-type 'darwin)
   (setq auth-sources '("~/.authinfo.gpg")))
-(when (file-exists-p "../my-emacs/mysecrets.el")
-  (load! "../my-emacs/mysecrets.el"))
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -155,3 +152,14 @@
   (xref-pop-marker-stack)
   (sp-forward-sexp)
   (sp-next-sexp))
+
+(defun custom-refactor-migration ()
+  "Refactors current buffer from a fresh db-migrate migration to use the default Custom migration script instead."
+  (interactive)
+  (goto-char 462)
+  (kill-sexp)
+  (delete-region (buffer-end 0) (buffer-end 1))
+  (insert-file-contents (locate-user-emacs-file "custom-migration-template.js"))
+  (goto-char 226)
+  (yank)
+  (kill-sexp))
