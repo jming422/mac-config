@@ -38,7 +38,7 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents
 # Path
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
-    export PATH="/usr/local/opt/mysql-client/bin:/usr/local/sbin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.config/doom-emacs/bin:$PATH"
+    export PATH="/usr/local/opt/postgresql@13/bin:/usr/local/opt/mysql-client/bin:/usr/local/sbin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.config/doom-emacs/bin:$PATH"
 fi
 
 # export SOURCEKIT_TOOLCHAIN_PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain"
