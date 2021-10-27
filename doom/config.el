@@ -75,7 +75,8 @@
 
 ;; Package configuration
 (after! lsp-mode
-  (setq +format-with-lsp nil))
+  (setq +format-with-lsp nil)
+  (setq lsp-rust-analyzer-proc-macro-enable t))
 
 (after! dap-mode
   (dap-register-debug-template "Node::Attach" '(:type "node" :request "attach" :name "Node::Attach")))
