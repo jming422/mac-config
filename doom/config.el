@@ -31,6 +31,9 @@
                      'doom-one-light
                    'doom-one))
 
+;; This fixes some issues with Emacs trying to connect to HTTPS endpoints
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; macOS customizations
 (when (eq system-type 'darwin)
   ;; Mac modifier key rebindings
@@ -75,7 +78,6 @@
 
 ;; Package configuration
 (after! lsp-mode
-  (setq +format-with-lsp nil)
   (setq lsp-rust-analyzer-proc-macro-enable t))
 
 (after! dap-mode
@@ -112,6 +114,9 @@
 (add-hook! markdown-mode
   (prettier-js-mode)
   (setq-local prettier-js-args '("--parser" "markdown")))
+
+(add-hook! prettier-js-mode
+  (setq-local +format-with-lsp nil))
 
 (add-hook! clojure-mode
   (add-hook 'before-save-hook #'cider-format-buffer t t))
