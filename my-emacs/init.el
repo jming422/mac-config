@@ -75,7 +75,7 @@
 
 
 ;; Load non-public setings/configs
-(setq auth-sources '("~/.authinfo.gpg"))
+(setq auth-sources '(macos-keychain-generic macos-keychain-internet "secrets:Login" "secrets:session" "~/.authinfo.gpg" "~/.authinfo" "~/.netrc"))
 (load (locate-user-emacs-file "mysecrets.el") t)
 
 
