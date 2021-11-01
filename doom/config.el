@@ -121,6 +121,15 @@
 (add-hook! clojure-mode
   (add-hook 'before-save-hook #'cider-format-buffer t t))
 
+(after! clojure-mode
+  (define-clojure-indent
+    (when-let* 1)))
+
+(after! cider
+  (setq cider-format-code-options
+        '(("indents" (("when-let*" (("block" 1)))
+                      ("com.climate.claypoole/with-shutdown!" (("block" 1))))))))
+
 (add-hook! (clojure-mode emacs-lisp-mode cider-repl-mode)
   (evil-cleverparens-mode))
 
