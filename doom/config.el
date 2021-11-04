@@ -136,6 +136,9 @@
 (after! vterm
   (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
+(add-hook! 'rainbow-mode-hook
+  (hl-line-mode (if rainbow-mode -1 +1)))
+
 ;; Custom functions & bindings
 (global-set-key (kbd "M-/") #'hippie-expand)
 (global-set-key (kbd "H-SPC") #'just-one-space) ;; because on macOS I use M-SPC for Spotlight
