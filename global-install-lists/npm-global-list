@@ -1,11 +1,7 @@
-/Users/jming/.nvm/versions/node/v14.18.1/lib
-├── bash-language-server@2.0.0
-├── eslint@7.32.0
+/Users/jming/.config/nvm/versions/node/v14.18.1/lib
+├── eslint@8.1.0
 ├── markdownlint@0.24.0
 ├── npm@7.24.2
 ├── prettier@2.4.1
-├── typescript-language-server@0.6.3
-├── typescript@4.4.3
-├── vscode-css-languageserver-bin@1.4.0
-└── vscode-html-languageserver-bin@1.4.0
+└── typescript@4.4.4
 

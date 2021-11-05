@@ -5,6 +5,11 @@
 /doom-emacs
 # Directory full of Ubersicht cloned repos
 /ubersicht
+# Rustup and cargo installation directories
+/cargo
+/rustup
+# nvm install directory
+/nvm
 # I don't know what this is
 /configstore
 

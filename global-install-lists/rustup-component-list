@@ -1,7 +1,6 @@
-cargo-x86_64-apple-darwin
-clippy-x86_64-apple-darwin
-rust-docs-x86_64-apple-darwin
+cargo-aarch64-apple-darwin
+clippy-aarch64-apple-darwin
 rust-src
-rust-std-x86_64-apple-darwin
-rustc-x86_64-apple-darwin
-rustfmt-x86_64-apple-darwin
+rust-std-aarch64-apple-darwin
+rustc-aarch64-apple-darwin
+rustfmt-aarch64-apple-darwin
