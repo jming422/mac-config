@@ -39,7 +39,7 @@
   ;; Mac modifier key rebindings
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super)
-  (setq mac-right-control-modifier 'hyper)
+  ;; (setq mac-right-control-modifier 'hyper)
   (add-hook 'ns-system-appearance-change-functions
             (lambda (appearance)
               (pcase appearance
@@ -78,7 +78,8 @@
 
 ;; Package configuration
 (after! lsp-mode
-  (setq lsp-rust-analyzer-proc-macro-enable t))
+  (setq lsp-rust-analyzer-proc-macro-enable t)
+  (setq lsp-metals-server-command "metals-emacs"))
 
 (after! dap-mode
   (dap-register-debug-template "Node::Attach" '(:type "node" :request "attach" :name "Node::Attach")))

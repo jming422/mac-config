@@ -32,6 +32,7 @@ brew "jq"
 brew "libvterm"
 brew "magic-wormhole"
 brew "markdown"
+brew "mas"
 brew "mupdf-tools"
 brew "mysql-client"
 brew "neofetch"
@@ -39,7 +40,7 @@ brew "ninja"
 brew "pandoc"
 brew "parquet-tools"
 brew "platformio"
-brew "postgresql"
+brew "postgresql", restart_service: true
 brew "qpdf"
 brew "rabbitmq", restart_service: true
 brew "ripgrep"
@@ -63,13 +64,24 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 cask "amethyst"
 cask "discord"
+cask "docker"
 cask "firefox"
 cask "gpg-suite-no-mail"
 cask "iterm2"
-cask "karabiner-elements"
+cask "keka"
 cask "michaelvillar-timer"
 cask "ngrok"
 cask "nosql-workbench"
 cask "signal"
 cask "temurin"
 cask "visual-studio-code"
+mas "1Password 7", id: 1333542190
+mas "Keynote", id: 409183694
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft OneNote", id: 784801555
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Word", id: 462054704
+mas "Numbers", id: 409203825
+mas "OneDrive", id: 823766827
+mas "Pages", id: 409201541

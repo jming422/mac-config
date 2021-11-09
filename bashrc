@@ -47,7 +47,7 @@ fi
 
 # Plugins, completions, etc.
 HOMEBREW_PREFIX=$(brew --prefix)
-HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/Brewfile"
+export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/Brewfile"
 export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
 if type brew &>/dev/null; then
   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
@@ -59,7 +59,7 @@ if type brew &>/dev/null; then
   fi
 fi
 
-# autocomplete setups
+# heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
 
 # vterm directory tracking
