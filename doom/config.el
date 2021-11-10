@@ -55,10 +55,6 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-;; Misc. config & variables
-(unless (eq system-type 'darwin)
-  (setq auth-sources '("~/.authinfo.gpg")))
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -100,14 +96,14 @@
   ;; from org to markdown and the output doesn't get formatted with Prettier like it would if I was just writing in
   ;; markdown-mode.
   (setq emacs-everywhere-init-hooks
-	`(emacs-everywhere-set-frame-name
-	  emacs-everywhere-set-frame-position
-	  ,(if (fboundp 'markdown-mode)
-	       #'emacs-everywhere-major-mode-org-or-markdown
-	     #'text-mode)
-	  emacs-everywhere-insert-selection
-	  emacs-everywhere-remove-trailing-whitespace
-	  emacs-everywhere-init-spell-check)))
+        `(emacs-everywhere-set-frame-name
+          emacs-everywhere-set-frame-position
+          ,(if (fboundp 'markdown-mode)
+               #'emacs-everywhere-major-mode-org-or-markdown
+             #'text-mode)
+          emacs-everywhere-insert-selection
+          emacs-everywhere-remove-trailing-whitespace
+          emacs-everywhere-init-spell-check)))
 
 (add-hook! (rjsx-mode yaml-mode css-mode json-mode typescript-mode)
   (prettier-js-mode))

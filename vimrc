@@ -6,7 +6,8 @@ if has("vms")
 else
   set backup		" keep a backup file (restore to previous version)
   if has('persistent_undo')
-    set undofile	" keep an undo file (undo changes after closing)
+    " set undofile	" keep an undo file (undo changes after closing)
+    set noundofile	" don't keep an undo file (undo changes after closing)
   endif
 endif
 
@@ -43,4 +44,6 @@ filetype plugin indent on
 
 set number
 set hlsearch
+set ignorecase
+set smartcase
 

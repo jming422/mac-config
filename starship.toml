@@ -6,6 +6,7 @@ format = "with [$symbol$env_value]($style) "
 
 # Nerd Font Symbols preset https://starship.rs/presets/#nerd-font-symbols
 [aws]
+disabled = true
 symbol = "  "
 
 [conda]
