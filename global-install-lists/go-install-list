@@ -1,0 +1,19 @@
+# Why the hell Go has no sensible way to install and list system installed
+# packages is beyond me, but it looks like they're going through a lot right now
+# I guess, so whatever. After installing `go` from Homebrew, here are the shell
+# commands you have to copy paste to make Doom Emacs's go module happy. Good
+# luck regenerating this file; I had to just dump my shell history in here to
+# make this one. Maybe someday they'll fix `go list all` and I'll put that here.
+#
+# An astute observer might notice that gocode is not in this list even though
+# doom doctor still wants it (at the time of this writing). This is intentional;
+# gocode is deprecated and I have the go lsp module enabled which should more
+# than take its place.
+
+go install github.com/x-motemen/gore/cmd/gore@latest
+go install golang.org/x/tools/cmd/godoc@latest
+go install golang.org/x/tools/cmd/goimports@latest
+go install golang.org/x/tools/cmd/gorename@latest
+go install golang.org/x/tools/cmd/guru@latest
+go install github.com/cweill/gotests/gotests@latest
+go install github.com/fatih/gomodifytags@latest
