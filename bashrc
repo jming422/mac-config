@@ -43,6 +43,9 @@ if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
     export PATH="$HOME/.local/bin:$GOPATH/bin:$XDG_CONFIG_HOME/doom-emacs/bin:$PATH"
 fi
 
+# vterm directory tracking
+source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
+
 # export SOURCEKIT_TOOLCHAIN_PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain"
 
 # Plugins, completions, etc.
@@ -61,9 +64,6 @@ fi
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
-
-# vterm directory tracking
-source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
 
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
