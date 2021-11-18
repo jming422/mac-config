@@ -21,15 +21,18 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 12))
+;; So by default #xe256 gets rendered using all-the-icons' Material Icons as a
+;; spacebar icon. But since I've never seen the spacebar icon used
+;; (intentionally) and since my starship prompt tries to use that codepoint to
+;; hit the Java icon in the Nerd Font, I want to lock that codepoint to the Nerd
+;; Font instead of Material Icons.
+(set-fontset-font t #Xe256 (font-spec :family "FiraCode Nerd Font"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 12))
-(setq doom-theme (if (let ((hour (decoded-time-hour (decode-time))))
-                       (> 18 hour 7))
-                     'doom-one-light
-                   'doom-one))
+;; `load-theme' function.
+(setq doom-theme 'doom-one-light)
 
 ;; This fixes some issues with Emacs trying to connect to HTTPS endpoints
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
@@ -125,6 +128,7 @@
 (after! cider
   (setq cider-format-code-options
         '(("indents" (("when-let*" (("block" 1)))
+                      ("with-temp-file" (("block" 1)))
                       ("com.climate.claypoole/with-shutdown!" (("block" 1))))))))
 
 (add-hook! (clojure-mode emacs-lisp-mode cider-repl-mode)
@@ -140,6 +144,7 @@
 (global-set-key (kbd "M-/") #'hippie-expand)
 (global-set-key (kbd "H-SPC") #'just-one-space) ;; because on macOS I use M-SPC for Spotlight
 (global-set-key (kbd "C-§") #'ignore)
+(global-set-key (kbd "<f16>") #'ignore)
 (global-set-key (kbd "<XF86AudioRaiseVolume>") #'ignore)
 (global-set-key (kbd "<XF86AudioLowerVolume>") #'ignore)
 (global-set-key (kbd "<XF86AudioMute>") #'ignore)
