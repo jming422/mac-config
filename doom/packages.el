@@ -55,7 +55,6 @@
 
 ;; Additions
 (package! crdt)
-(package! emacs-everywhere)
 (package! evil-cleverparens)
 (package! literate-calc-mode)
 (package! prettier-js)

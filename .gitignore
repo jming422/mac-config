@@ -12,6 +12,8 @@
 /nvm
 # I don't know what this is
 /configstore
+# This contains an auth token
+/ngrok2/ngrok.yml
 
 .DS_Store
 *.log

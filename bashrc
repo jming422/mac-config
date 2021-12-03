@@ -32,7 +32,7 @@ export SAM_CLI_TELEMETRY=0
 
 # Path vars
 export GOPATH="$HOME/Documents/go"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
 export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 . "/Users/jming/.config/cargo/env"
@@ -40,7 +40,7 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 # Path
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
-    export PATH="$HOME/.local/bin:$GOPATH/bin:$XDG_CONFIG_HOME/doom-emacs/bin:$PATH"
+    export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/doom-emacs/bin:$PATH"
 fi
 
 # vterm directory tracking
@@ -62,10 +62,10 @@ if type brew &>/dev/null; then
   fi
 fi
 
-# heroku autocomplete setup
-HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
-
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# heroku autocomplete setup
+HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
