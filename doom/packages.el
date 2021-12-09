@@ -58,3 +58,4 @@
 (package! evil-cleverparens)
 (package! literate-calc-mode)
 (package! prettier-js)
+(package! fireplace)
