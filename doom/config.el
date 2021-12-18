@@ -22,12 +22,6 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 12))
-;; So by default #xe256 gets rendered using all-the-icons' Material Icons as a
-;; spacebar icon. But since I've never seen the spacebar icon used
-;; (intentionally) and since my starship prompt tries to use that codepoint to
-;; hit the Java icon in the Nerd Font, I want to lock that codepoint to the Nerd
-;; Font instead of Material Icons.
-(set-fontset-font t #Xe256 (font-spec :family "FiraCode Nerd Font"))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -137,7 +131,15 @@
 (after! vterm
   (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
-(add-hook! 'rainbow-mode-hook
+(add-hook! vterm-mode
+  ;; So by default #xe256 gets rendered using all-the-icons' Material Icons as a
+  ;; spacebar icon. But since I've never seen the spacebar icon used
+  ;; (intentionally) and since my starship prompt tries to use that codepoint to
+  ;; hit the Java icon in the Nerd Font, I want to lock that codepoint to the Nerd
+  ;; Font instead of Material Icons.
+  (set-fontset-font t #Xe256 (font-spec :family "FiraCode Nerd Font")))
+
+(add-hook! rainbow-mode
   (hl-line-mode (if rainbow-mode -1 +1)))
 
 ;; Custom functions & bindings

@@ -16,10 +16,6 @@ alias de='emacs --with-profile doom'
 alias crap='ps -ef | grep scrape'
 alias rek='kill -KILL'
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(starship init bash)"
-eval "$(direnv hook bash)"
-
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Terminal modifiers
@@ -40,8 +36,12 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 # Path
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/doom-emacs/bin:$PATH"
 fi
+
+eval "$(starship init bash)"
+eval "$(direnv hook bash)"
 
 # vterm directory tracking
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
