@@ -28,6 +28,7 @@ export SAM_CLI_TELEMETRY=0
 
 # Path vars
 export GOPATH="$HOME/Documents/go"
+# See: $ /usr/libexec/java_home -V
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
 export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
