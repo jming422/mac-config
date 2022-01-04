@@ -62,7 +62,7 @@ brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-modern-alecive-flatwoke
 brew "golangci/tap/golangci-lint"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 cask "amethyst"
 cask "discord"
 cask "docker"
@@ -78,6 +78,7 @@ cask "nosql-workbench"
 cask "signal"
 cask "sitcord"
 cask "temurin"
+cask "ubersicht"
 cask "visual-studio-code"
 mas "1Password 7", id: 1333542190
 mas "Keynote", id: 409183694
