@@ -15,6 +15,7 @@ alias d='emacs -nw --with-profile doom'
 alias de='emacs --with-profile doom'
 alias crap='ps -ef | grep scrape'
 alias rek='kill -KILL'
+alias 🍻='brew update && brew upgrade && brew bundle dump -f && brew bundle'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 

@@ -122,6 +122,7 @@
 (after! cider
   (setq cider-format-code-options
         '(("indents" (("when-let*" (("block" 1)))
+                      ("backoff-and-retry" (("block" 1)))
                       ("with-temp-file" (("block" 1)))
                       ("com.climate.claypoole/with-shutdown!" (("block" 1))))))))
 
