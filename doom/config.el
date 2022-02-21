@@ -143,6 +143,8 @@
 (add-hook! rainbow-mode
   (hl-line-mode (if rainbow-mode -1 +1)))
 
+(add-to-list 'auto-mode-alist '("\\.env\\'" . fundamental-mode))
+
 ;; Custom functions & bindings
 (global-set-key (kbd "M-/") #'hippie-expand)
 (global-set-key (kbd "H-SPC") #'just-one-space) ;; because on macOS I use M-SPC for Spotlight
