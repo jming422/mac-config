@@ -12,7 +12,7 @@ protobuf       3.19.4
 ptvsd          4.3.2
 pytest         7.0.1
 regex          2022.1.18
-rope           0.22.0
+rope           0.23.0
 seashells      0.1.2
 tabulate       0.8.9
 wheel          0.37.1
