@@ -59,7 +59,7 @@ brew "aws/tap/aws-sam-cli"
 brew "borkdude/brew/clj-kondo"
 brew "clojure/tools/clojure"
 brew "coursier/formulas/coursier"
-brew "d12frosted/emacs-plus/emacs-plus@27", args: ["with-modern-alecive-flatwoken-icon"]
+brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-modern-alecive-flatwoken-icon"]
 brew "golangci/tap/golangci-lint"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
