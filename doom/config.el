@@ -188,3 +188,9 @@
   (goto-char 226)
   (yank)
   (kill-sexp))
+
+;; Hacks
+;; Stuff to modify Doom's behavior in weird or custom ways. These are the most likely things in this file to break.
+(add-hook! 'prettify-symbols-mode-hook
+  (when prettify-symbols-mode
+    (prettify-symbols-mode -1)))
