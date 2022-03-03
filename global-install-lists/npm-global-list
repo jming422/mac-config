@@ -1,6 +1,7 @@
-/Users/jming/.config/nvm/versions/node/v14.18.1/lib
-├── markdownlint@0.24.0
-├── npm@7.24.2
-├── prettier@2.4.1
-└── typescript@4.4.4
+/Users/jming/.config/nvm/versions/node/v16.14.0/lib
+├── corepack@0.10.0
+├── markdownlint@0.25.1
+├── npm@8.5.2
+├── prettier@2.5.1
+└── typescript@4.6.2
 
