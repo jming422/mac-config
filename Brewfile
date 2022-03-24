@@ -40,7 +40,6 @@ brew "mysql-client"
 brew "neofetch"
 brew "ninja"
 brew "pandoc"
-brew "parquet-tools"
 brew "platformio"
 brew "postgresql", restart_service: true
 brew "qpdf"
@@ -63,7 +62,7 @@ brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-modern-alecive-flatwoke
 brew "golangci/tap/golangci-lint"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+brew "koekeishiya/formulae/yabai"
 cask "amethyst"
 cask "discord"
 cask "docker"
