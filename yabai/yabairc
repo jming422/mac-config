@@ -39,3 +39,4 @@ yabai -m config insert_feedback_color        0xffd75f5f
 # float system preferences
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title="^Emacs Everywhere" manage=off
+yabai -m rule --add title="^∞$" manage=off
