@@ -30,6 +30,7 @@ brew "go"
 brew "graphviz"
 brew "grip"
 brew "imagemagick"
+brew "iredis"
 brew "jq"
 brew "libvterm"
 brew "magic-wormhole"
@@ -44,6 +45,7 @@ brew "platformio"
 brew "postgresql", restart_service: true
 brew "qpdf"
 brew "rabbitmq", restart_service: true
+brew "redis", restart_service: true
 brew "ripgrep"
 brew "rlwrap"
 brew "rust-analyzer"
