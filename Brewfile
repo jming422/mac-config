@@ -41,6 +41,7 @@ brew "mysql-client"
 brew "neofetch"
 brew "ninja"
 brew "pandoc"
+brew "pgformatter"
 brew "platformio"
 brew "postgresql", restart_service: true
 brew "qpdf"
