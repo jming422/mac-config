@@ -81,8 +81,8 @@
   (setq projectile-files-cache-expire 10))
 
 (after! forge
-  (transient-append-suffix 'forge-dispatch '(0 2 -1)
-    '("c x" "pull review request" forge-edit-topic-review-requests)))
+  (transient-append-suffix 'forge-dispatch '(0 0 7)
+    '("c x" "pull-request review request" forge-edit-topic-review-requests)))
 
 (after! emacs-everywhere
   (setq emacs-everywhere-markdown-apps '("Discord" "Slack"))
