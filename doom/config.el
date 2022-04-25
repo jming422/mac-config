@@ -154,7 +154,10 @@
 (global-set-key (kbd "<XF86AudioLowerVolume>") #'ignore)
 (global-set-key (kbd "<XF86AudioMute>") #'ignore)
 (global-set-key (kbd "<XF86AudioPlay>") #'ignore)
-
+(after! evil
+  (map! :map evil-normal-state-map
+        :prefix "["
+        "I" #'+vertico/search-symbol-at-point))
 
 (defun js-refactor-const-to-function ()
   "Refactor all `const myFunc = () => {}' forms in the current buffer to `function myFunc() {}' forms."
