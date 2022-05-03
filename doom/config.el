@@ -43,6 +43,9 @@
                 ('light (load-theme 'doom-one-light t))
                 ('dark (load-theme 'doom-one t))))))
 
+(custom-set-faces!
+  `(vterm-color-black :foreground ,(doom-lighten 'fg 0.1) :background ,(doom-color 'fg))
+  `(vterm-color-white :foreground ,(doom-color 'bg-alt) :background ,(doom-color 'bg)))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
