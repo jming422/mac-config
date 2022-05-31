@@ -146,6 +146,9 @@
 (add-hook! rainbow-mode
   (hl-line-mode (if rainbow-mode -1 +1)))
 
+(after! crdt
+  (setq crdt-use-tuntox 'confirm))
+
 (add-to-list 'auto-mode-alist '("\\.env\\'" . fundamental-mode))
 
 ;; Custom functions & bindings
