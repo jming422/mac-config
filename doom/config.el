@@ -207,7 +207,3 @@
 ;; https://github.com/hlissner/doom-emacs/issues/3038#issuecomment-624165004
 (after! counsel
   (setq counsel-rg-base-command "rg -M 240 --with-filename --no-heading --line-number --color never %s || true"))
-;; https://github.com/abo-abo/swiper/issues/2795
-;; https://github.com/raxod502/prescient.el/issues/92
-(after! prescient
-  (setq prescient-use-char-folding nil))
