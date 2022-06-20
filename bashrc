@@ -21,7 +21,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # Terminal modifiers
 # PS1="\A \w \$ "
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 export EDITOR="emacsclient"
 
 # aws vars
@@ -30,7 +31,8 @@ export SAM_CLI_TELEMETRY=0
 # Path vars
 export GOPATH="$HOME/Documents/go"
 # See: $ /usr/libexec/java_home -V
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"
+JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME
 export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 . "/Users/jming/.config/cargo/env"

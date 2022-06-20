@@ -86,7 +86,6 @@ cask "signal"
 cask "temurin"
 cask "ubersicht"
 cask "visual-studio-code"
-mas "1Password 7", id: 1333542190
 mas "Keynote", id: 409183694
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555
