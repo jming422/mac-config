@@ -188,12 +188,12 @@
   (sp-next-sexp))
 
 (defun custom-refactor-migration ()
-  "Refactors current buffer from a fresh db-migrate migration to use the default Custom migration script instead."
+  "Refactors current buffer from a fresh db-migrate migration to use my custom migration script instead."
   (interactive)
   (goto-char 462)
   (kill-sexp)
   (delete-region (buffer-end 0) (buffer-end 1))
-  (insert-file-contents (locate-user-emacs-file "custom-migration-template.js"))
+  (insert-file-contents (concat doom-private-dir "custom-migration-template.js"))
   (goto-char 226)
   (yank)
   (kill-sexp))
