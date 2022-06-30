@@ -54,7 +54,7 @@
 (package! evil-easymotion :recipe (:host github :repo "CloseToZero/evil-easymotion" :branch "master"))
 
 ;; Additions
-(package! crdt)
+(package! crdt :recipe (:host nil :repo "https://code.librehq.com/jming422/crdt.el.git" :type git :branch "tuntox-password-in-url"))
 (package! evil-cleverparens)
 (package! literate-calc-mode)
 (package! prettier-js)

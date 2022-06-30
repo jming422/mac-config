@@ -147,7 +147,8 @@
   (hl-line-mode (if rainbow-mode -1 +1)))
 
 (after! crdt
-  (setq crdt-use-tuntox 'confirm))
+  (setq crdt-use-tuntox 'confirm)
+  (setq crdt-tuntox-password-in-url t))
 
 (add-to-list 'auto-mode-alist '("\\.env\\'" . fundamental-mode))
 
