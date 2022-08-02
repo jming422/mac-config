@@ -1,7 +1,7 @@
 # Tiling
 ## Focusing
-alt + ctrl - k : yabai -m window --focus prev || yabai -m window --focus last  # focus prev or last window
-alt + ctrl - j : yabai -m window --focus next || yabai -m window --focus first # focus next or first window
+alt + ctrl - j : yabai -m window --focus prev || yabai -m window --focus last  # focus prev or last window
+alt + ctrl - k : yabai -m window --focus next || yabai -m window --focus first # focus next or first window
 
 alt + ctrl - s : yabai -m display --focus 1 # focus monitor 1
 alt + ctrl - d : yabai -m display --focus 2 # focus monitor 2
