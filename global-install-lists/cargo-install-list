@@ -1,4 +1,4 @@
-cargo-expand v1.0.9:
+cargo-expand v1.0.29:
     cargo-expand
 cargo-shuttle v0.4.1:
     cargo-shuttle

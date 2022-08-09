@@ -49,6 +49,7 @@ brew "platformio"
 brew "postgresql", restart_service: true
 brew "qpdf"
 brew "rabbitmq", restart_service: true
+brew "ranger"
 brew "redis", restart_service: true
 brew "ripgrep"
 brew "rlwrap"
