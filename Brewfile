@@ -45,6 +45,7 @@ brew "neofetch"
 brew "ninja"
 brew "pandoc"
 brew "pgformatter"
+brew "pipx"
 brew "platformio"
 brew "postgresql", restart_service: true
 brew "qpdf"
