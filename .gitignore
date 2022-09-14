@@ -1,8 +1,6 @@
 # -*- mode: gitignore; -*-
-# Chemacs cloned repo
-/emacs
 # Doom Emacs cloned repo
-/doom-emacs
+/emacs
 # Directory full of Ubersicht cloned repos
 /ubersicht
 # Rustup and cargo installation directories

@@ -8,11 +8,7 @@ alias l="ll"
 alias ll="ls -alh"
 alias lr="lein repl"
 alias ls="ls -G"
-alias pgstart="pg_ctl -D /usr/local/var/postgres start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
 alias cenv='env -S $(cat .env)'
-alias d='emacs -nw --with-profile doom'
-alias de='emacs --with-profile doom'
 alias crap='ps -ef | grep scrape'
 alias rek='kill -KILL'
 alias 🍻='brew update && brew upgrade && brew bundle dump -f && brew bundle'
@@ -41,7 +37,7 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/doom-emacs/bin:$PATH"
+    export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/emacs/bin:$PATH"
 fi
 
 eval "$(starship init bash)"

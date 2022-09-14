@@ -47,7 +47,7 @@ brew "pandoc"
 brew "pgformatter"
 brew "pipx"
 brew "platformio"
-brew "postgresql", restart_service: true
+brew "postgresql@14", restart_service: true
 brew "qpdf"
 brew "rabbitmq", restart_service: true
 brew "ranger"
