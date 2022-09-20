@@ -6,11 +6,8 @@ alias cdf="cd ~/Documents/focus"
 alias grep="grep --color=auto"
 alias l="ll"
 alias ll="ls -alh"
-alias lr="lein repl"
 alias ls="ls -G"
 alias cenv='env -S $(cat .env)'
-alias crap='ps -ef | grep scrape'
-alias rek='kill -KILL'
 alias 🍻='brew update && brew upgrade && brew bundle dump -f && brew bundle'
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -36,12 +33,14 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 # Path
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-    export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/emacs/bin:$PATH"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+  export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/emacs/bin:$PATH"
 fi
 
-eval "$(starship init bash)"
-eval "$(direnv hook bash)"
+if [[ -z "$JM_NO_INTERACTIVE" ]]; then
+  eval "$(starship init bash)"
+  eval "$(direnv hook bash)"
+fi
 
 # vterm directory tracking
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
@@ -64,8 +63,8 @@ fi
 
 # nvm
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # heroku autocomplete setup
-HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
+HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH
