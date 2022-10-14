@@ -1,6 +1,6 @@
 venvs are in /Users/jming/.local/pipx/venvs
 apps are exposed on your $PATH at /Users/jming/.local/bin
-   package black 22.8.0, installed using Python 3.10.6
+   package black 22.10.0, installed using Python 3.10.6
     - black
     - blackd
    package isort 5.10.1, installed using Python 3.10.6
