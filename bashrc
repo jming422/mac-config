@@ -34,7 +34,7 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
-  export PATH="$HOME/.local/bin:$GOPATH/bin:$HOME/Library/Application Support/Coursier/bin:$XDG_CONFIG_HOME/emacs/bin:$PATH"
+  export PATH="$HOME/.local/bin:$GOPATH/bin:$XDG_CONFIG_HOME/emacs/bin:$PATH"
 fi
 
 if [[ -z "$JM_NO_INTERACTIVE" ]]; then
@@ -46,6 +46,8 @@ fi
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
 
 # export SOURCEKIT_TOOLCHAIN_PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain"
+
+export LLVM_CONFIG=/opt/homebrew/opt/llvm@14/bin/llvm-config
 
 # Plugins, completions, etc.
 HOMEBREW_PREFIX=$(brew --prefix)
