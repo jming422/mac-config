@@ -51,6 +51,7 @@ brew "pipx"
 brew "platformio"
 brew "postgresql@14", restart_service: true
 brew "qpdf"
+brew "unixodbc"
 brew "rabbitmq", restart_service: true
 brew "ranger"
 brew "redis", restart_service: true
@@ -62,7 +63,6 @@ brew "shfmt"
 brew "starship"
 brew "trash"
 brew "tuntox"
-brew "unixodbc"
 brew "watchman"
 brew "xpdf"
 brew "yarn"

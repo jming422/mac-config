@@ -157,6 +157,12 @@
 (use-package! ron-mode
   :mode "\\.ron\\'")
 
+(after! (pipenv lsp-mode)
+  (define-advice pipenv-activate (:after ())
+    (when lsp-mode (call-interactively #'lsp-workspace-restart)))
+  (define-advice pipenv-deactivate (:after ())
+    (when lsp-mode (call-interactively #'lsp-workspace-restart))))
+
 (add-to-list 'auto-mode-alist '("\\.env\\'" . fundamental-mode))
 
 ;; Custom functions & bindings
