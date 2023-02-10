@@ -50,15 +50,15 @@ source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
 export LLVM_CONFIG=/opt/homebrew/opt/llvm@14/bin/llvm-config
 
 # Plugins, completions, etc.
-HOMEBREW_PREFIX=$(brew --prefix)
-export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/Brewfile"
-export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
 if type brew &>/dev/null; then
+  export HOMEBREW_BUNDLE_FILE="$XDG_CONFIG_HOME/Brewfile"
+  export BASH_COMPLETION_COMPAT_DIR="${HOMEBREW_PREFIX}/etc/bash_completion.d"
+  HOMEBREW_PREFIX="$(brew --prefix)"
   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
     source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
   else
     for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
     done
   fi
 fi
