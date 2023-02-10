@@ -1,9 +1,9 @@
 venvs are in /Users/jming/.local/pipx/venvs
 apps are exposed on your $PATH at /Users/jming/.local/bin
-   package black 22.12.0, installed using Python 3.10.6
+   package black 23.1.0, installed using Python 3.10.6
     - black
     - blackd
-   package isort 5.11.4, installed using Python 3.10.6
+   package isort 5.12.0, installed using Python 3.10.6
     - isort
     - isort-identify-imports
    package jupyter 1.0.0, installed using Python 3.10.6
@@ -37,5 +37,7 @@ apps are exposed on your $PATH at /Users/jming/.local/bin
    package pytest 7.2.1, installed using Python 3.10.6
     - py.test
     - pytest
+   package scrapy 2.8.0, installed using Python 3.10.9
+    - scrapy
    package seashells 0.1.2, installed using Python 3.10.6
     - seashells

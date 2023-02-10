@@ -86,7 +86,9 @@
   (lsp))
 
 (after! dap-mode
-  (dap-register-debug-template "Node::Attach" '(:type "node" :request "attach" :name "Node::Attach")))
+  (dap-register-debug-template
+   "Node::Attach"
+   '(:type "node" :request "attach" :name "Node::Attach")))
 
 (after! projectile
   (setq projectile-files-cache-expire 10))
@@ -99,10 +101,11 @@
   (setq emacs-everywhere-markdown-apps '("Discord" "Slack"))
   (setq emacs-everywhere-frame-name-format "Emacs Everywhere")
 
-  ;; This is the same as the default, except it does not force org mode when pandoc is available; it uses markdown mode
-  ;; for markdown flavored windows and org mode for everything else. This is because pandoc doesn't do a 1:1 conversion
-  ;; from org to markdown and the output doesn't get formatted with Prettier like it would if I was just writing in
-  ;; markdown-mode.
+  ;; This is the same as the default, except it does not force org mode when
+  ;; pandoc is available; it uses markdown mode for markdown flavored windows
+  ;; and org mode for everything else. This is because pandoc doesn't do a 1:1
+  ;; conversion from org to markdown and the output doesn't get formatted with
+  ;; Prettier like it would if I was just writing in markdown-mode.
   (setq emacs-everywhere-init-hooks
         `(emacs-everywhere-set-frame-name
           emacs-everywhere-set-frame-position
@@ -183,7 +186,8 @@
         "I" #'+vertico/search-symbol-at-point))
 
 (defun js-refactor-const-to-function ()
-  "Refactor all `const myFunc = () => {}' forms in the current buffer to `function myFunc() {}' forms."
+  "Refactor all `const myFunc = () => {}' forms in the current buffer to
+`function myFunc() {}' forms."
   (interactive)
   (let ((starting-point (point)))
     (goto-char (point-min))
@@ -192,7 +196,10 @@
     (goto-char starting-point)))
 
 (defun js-refactor-to-individual-export ()
-  "Refactor the declaration of sexp at point to have the `export' keyword at its beginning, then move point to the next sexp.  If you place your point on the first sexp in a grouped `export { x, y }' form, you can repeat this function to refactor all the exported vars in one fell swoop."
+  "Refactor the declaration of sexp at point to have the `export' keyword at its
+beginning, then move point to the next sexp.  If you place your point on the
+first sexp in a grouped `export { x, y }' form, you can repeat this function to
+refactor all the exported vars in one fell swoop."
   (interactive)
   (let ((xref-results (xref-find-definitions (xref-backend-identifier-at-point (xref-find-backend)))))
     (when (eq 'buffer (type-of xref-results))
@@ -205,7 +212,8 @@
   (sp-next-sexp))
 
 (defun custom-refactor-migration ()
-  "Refactors current buffer from a fresh db-migrate migration to use my custom migration script instead."
+  "Refactors current buffer from a fresh db-migrate migration to use my custom
+migration script instead."
   (interactive)
   (goto-char 462)
   (kill-sexp)
@@ -216,7 +224,8 @@
   (kill-sexp))
 
 ;; Hacks
-;; Stuff to modify Doom's behavior in weird or custom ways. These are the most likely things in this file to break.
+;; Stuff to modify Doom's behavior in weird or custom ways. These are the most
+;; likely things in this file to break.
 (add-hook! 'prettify-symbols-mode-hook
   (when prettify-symbols-mode
     (prettify-symbols-mode -1)))
