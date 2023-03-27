@@ -16,6 +16,7 @@ alt + ctrl - r : yabai -m window --display 3 && yabai -m display --focus 3 # mov
 
 ## Layout
 cmd + shift - space : yabai -m window --toggle split # toggle between horizontal & vertical splits
+alt + ctrl - q : yabai -m window --toggle float      # toggle float vs tiled
 alt + ctrl - z : yabai -m space --balance            # balance window sizes
 
 alt + ctrl - h : yabai -m window --resize left:-80:0 || yabai -m window --resize right:-80:0 # shrink focused window horizontally

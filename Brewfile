@@ -52,6 +52,7 @@ brew "pgformatter"
 brew "pipx"
 brew "platformio"
 brew "postgresql@14", restart_service: true
+brew "protobuf"
 brew "qpdf"
 brew "rabbitmq", restart_service: true
 brew "ranger"

@@ -1,12 +1,12 @@
 venvs are in /Users/jming/.local/pipx/venvs
 apps are exposed on your $PATH at /Users/jming/.local/bin
-   package black 23.1.0, installed using Python 3.10.6
+   package black 23.1.0, installed using Python 3.11.2
     - black
     - blackd
-   package isort 5.12.0, installed using Python 3.10.6
+   package isort 5.12.0, installed using Python 3.11.2
     - isort
     - isort-identify-imports
-   package jupyter 1.0.0, installed using Python 3.10.6
+   package jupyter 1.0.0, installed using Python 3.11.2
     - ipython
     - ipython3
     - jsonschema
@@ -14,30 +14,37 @@ apps are exposed on your $PATH at /Users/jming/.local/bin
     - jupyter-bundlerextension
     - jupyter-console
     - jupyter-dejavu
+    - jupyter-events
     - jupyter-execute
     - jupyter-kernel
     - jupyter-kernelspec
     - jupyter-migrate
+    - jupyter-nbclassic
+    - jupyter-nbclassic-bundlerextension
+    - jupyter-nbclassic-extension
+    - jupyter-nbclassic-serverextension
     - jupyter-nbconvert
     - jupyter-nbextension
     - jupyter-notebook
     - jupyter-qtconsole
     - jupyter-run
+    - jupyter-server
     - jupyter-serverextension
     - jupyter-troubleshoot
     - jupyter-trust
     - pygmentize
     - qtpy
     - send2trash
-   package nose 1.3.7, installed using Python 3.10.6
+    - wsdump
+   package nose 1.3.7, installed using Python 3.11.2
     - nosetests
     - nosetests-3.4
-   package pyflakes 3.0.1, installed using Python 3.10.6
+   package pyflakes 3.0.1, installed using Python 3.11.2
     - pyflakes
-   package pytest 7.2.1, installed using Python 3.10.6
+   package pytest 7.2.2, installed using Python 3.11.2
     - py.test
     - pytest
-   package scrapy 2.8.0, installed using Python 3.10.9
+   package scrapy 2.8.0, installed using Python 3.11.2
     - scrapy
-   package seashells 0.1.2, installed using Python 3.10.6
+   package seashells 0.1.2, installed using Python 3.11.2
     - seashells

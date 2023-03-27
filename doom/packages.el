@@ -55,7 +55,7 @@
 
 ;; Additions
 (package! evil-cleverparens)
+(package! fireplace)
 (package! literate-calc-mode)
 (package! prettier-js)
-(package! fireplace)
 (package! ron-mode)
