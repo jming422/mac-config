@@ -74,6 +74,7 @@
 
 ;; Package configuration
 (after! lsp-mode
+  (setq lsp-ui-doc-enable nil)
   (setq lsp-rust-analyzer-proc-macro-enable t)
   (add-to-list 'lsp-language-id-configuration '(crystal-mode . "crystal"))
   (lsp-register-client
@@ -226,9 +227,9 @@ migration script instead."
 ;; Hacks
 ;; Stuff to modify Doom's behavior in weird or custom ways. These are the most
 ;; likely things in this file to break.
-(add-hook! 'prettify-symbols-mode-hook
-  (when prettify-symbols-mode
-    (prettify-symbols-mode -1)))
+;; (add-hook! 'prettify-symbols-mode-hook
+;;   (when prettify-symbols-mode
+;;     (prettify-symbols-mode -1)))
 
 ;; https://github.com/hlissner/doom-emacs/issues/3038#issuecomment-624165004
 (after! counsel

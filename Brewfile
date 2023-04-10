@@ -2,6 +2,7 @@ tap "aws/tap"
 tap "borkdude/brew"
 tap "clojure/tools"
 tap "d12frosted/emacs-plus"
+tap "dopplerhq/cli"
 tap "golangci/tap"
 tap "heroku/brew"
 tap "homebrew/bundle"
@@ -53,7 +54,6 @@ brew "pipx"
 brew "platformio"
 brew "postgresql@14", restart_service: true
 brew "protobuf"
-brew "qpdf"
 brew "rabbitmq", restart_service: true
 brew "ranger"
 brew "redis", restart_service: true
@@ -71,6 +71,7 @@ brew "yarn"
 brew "borkdude/brew/clj-kondo"
 brew "clojure/tools/clojure"
 brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-modern-doom3-icon", "with-native-comp"]
+brew "dopplerhq/cli/doppler"
 brew "golangci/tap/golangci-lint"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
