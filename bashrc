@@ -42,6 +42,9 @@ if [[ -z "$JM_NO_INTERACTIVE" ]]; then
   eval "$(direnv hook bash)"
 fi
 
+# asdf version manager
+. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+
 # vterm directory tracking
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
 
@@ -73,3 +76,4 @@ export PIPENV_MAX_DEPTH=7
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH
+

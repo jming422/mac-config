@@ -41,7 +41,7 @@ apps are exposed on your $PATH at /Users/jming/.local/bin
     - nosetests-3.4
    package pyflakes 3.0.1, installed using Python 3.11.3
     - pyflakes
-   package pytest 7.3.0, installed using Python 3.11.3
+   package pytest 7.3.1, installed using Python 3.11.3
     - py.test
     - pytest
    package scrapy 2.8.0, installed using Python 3.11.3

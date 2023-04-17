@@ -34,8 +34,8 @@
 ;; macOS customizations
 (when (eq system-type 'darwin)
   ;; Mac modifier key rebindings
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier 'super)
+  ;; (setq mac-command-modifier 'meta)
+  ;; (setq mac-option-modifier 'super)
   ;; (setq mac-right-control-modifier 'hyper)
   (add-hook 'ns-system-appearance-change-functions
             (lambda (appearance)
@@ -171,8 +171,8 @@
 
 ;; Custom functions & bindings
 (global-set-key (kbd "M-/") #'hippie-expand)
- ;; because I use ⌘-SPC for Raycast and like a dingus I still have ⌘ in Emacs
- ;; set to meta instead of super
+ ;; because with my current keyboard it is uncomfortable to push M-SPC, I want
+ ;; H-SPC as an additional option
 (global-set-key (kbd "H-SPC") #'just-one-space)
 (global-set-key (kbd "C-§") #'ignore)
 (global-set-key (kbd "<f15>") #'ignore)
@@ -227,9 +227,6 @@ migration script instead."
 ;; Hacks
 ;; Stuff to modify Doom's behavior in weird or custom ways. These are the most
 ;; likely things in this file to break.
-;; (add-hook! 'prettify-symbols-mode-hook
-;;   (when prettify-symbols-mode
-;;     (prettify-symbols-mode -1)))
 
 ;; https://github.com/hlissner/doom-emacs/issues/3038#issuecomment-624165004
 (after! counsel
