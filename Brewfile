@@ -74,7 +74,7 @@ brew "yarn"
 brew "borkdude/brew/clj-kondo"
 brew "clojure/tools/clojure"
 brew "d12frosted/emacs-plus/emacs-plus@28", args: ["with-modern-doom3-icon", "with-native-comp"]
-brew "dopplerhq/cli/doppler"
+brew "dopplerhq/cli/doppler", link: false
 brew "golangci/tap/golangci-lint"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
