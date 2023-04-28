@@ -1,7 +1,7 @@
-/Users/jming/.config/nvm/versions/node/v18.16.0/lib
+/Users/jming/.asdf/installs/nodejs/18.16.0/lib
 ├── corepack@0.17.2
-├── markdownlint@0.28.1
-├── npm@9.6.4
-├── prettier@2.8.7
+├── markdownlint@0.28.2
+├── npm@9.6.5
+├── prettier@2.8.8
 └── typescript@5.0.4
 

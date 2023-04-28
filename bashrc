@@ -31,7 +31,7 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 . "/Users/jming/.config/cargo/env"
 
 # Path
-# Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess up nvm.
+# Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess stuff up.
 if [[ "$INSIDE_EMACS" != 'vterm' ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   export PATH="$HOME/.local/bin:$GOPATH/bin:$XDG_CONFIG_HOME/emacs/bin:$PATH"
@@ -65,11 +65,6 @@ if type brew &>/dev/null; then
     done
   fi
 fi
-
-# nvm
-export NVM_DIR="$XDG_CONFIG_HOME/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # pipenv
 export PIPENV_MAX_DEPTH=7
