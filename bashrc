@@ -1,10 +1,8 @@
 # -*- mode: sh; -*-
 # Globally desirable aliases
-alias activate="source venv/bin/activate"
 alias ..="cd .."
 alias cdf="cd ~/Documents/focus"
 alias grep="grep --color=auto"
-alias l="ll"
 alias ll="ls -alh"
 alias ls="ls -G"
 alias cenv='env -S $(cat .env)'
@@ -42,8 +40,12 @@ if [[ -z "$JM_NO_INTERACTIVE" ]]; then
   eval "$(direnv hook bash)"
 fi
 
+export KERL_CONFIGURE_OPTIONS="--without-javac"
+
 # asdf version manager
 . "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+
+source "${XDG_CONFIG_HOME}/asdf-direnv/bashrc"
 
 # vterm directory tracking
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
@@ -71,4 +73,3 @@ export PIPENV_MAX_DEPTH=7
 
 # heroku autocomplete setup
 HEROKU_AC_BASH_SETUP_PATH="$HOME/Library/Caches/heroku/autocomplete/bash_setup" && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH
-

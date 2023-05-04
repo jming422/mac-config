@@ -6,12 +6,14 @@
 # Rustup and cargo installation directories
 /cargo
 /rustup
-# nvm install directory
-/nvm
 # I don't know what this is
 /configstore
-# This contains an auth token
+# These contain tokens
 /ngrok2/ngrok.yml
+/exercism/user.json
+# asdf-direnv plugin manages these
+/asdf-direnv
+/direnv/lib/use_asdf.sh
 
 .DS_Store
 *.log
