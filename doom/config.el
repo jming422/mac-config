@@ -45,7 +45,15 @@
 
 (custom-set-faces!
   `(vterm-color-black :foreground ,(doom-color 'fg) :background ,(doom-darken 'fg 0.2))
-  `(vterm-color-white :foreground ,(doom-color 'bg-alt) :background ,(doom-color 'bg)))
+  `(vterm-color-white :foreground ,(doom-color 'bg-alt) :background ,(doom-color 'bg))
+  ;; doom-tomorrow-day doesn't have any colors set for ediff highlights, so add those
+  `(ediff-fine-diff-A :foreground ,(doom-color 'red) :background ,(doom-lighten 'red 0.6) :weight bold)
+  `(ediff-fine-diff-B :foreground ,(doom-color 'green) :background ,(doom-lighten 'green 0.6) :weight bold)
+  `(ediff-fine-diff-C :foreground ,(doom-color 'blue) :background ,(doom-lighten 'blue 0.6) :weight bold)
+  `(ediff-current-diff-A :foreground ,(doom-color 'red) :background ,(doom-lighten 'red 0.8))
+  `(ediff-current-diff-B :foreground ,(doom-color 'green) :background ,(doom-lighten 'green 0.8))
+  `(ediff-current-diff-C :foreground ,(doom-color 'blue) :background ,(doom-lighten 'blue 0.8))
+  `(ediff-current-diff-Ancestor :foreground ,(doom-color 'teal) :background ,(doom-lighten 'teal 0.8)))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

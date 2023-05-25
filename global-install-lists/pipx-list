@@ -6,36 +6,6 @@ apps are exposed on your $PATH at /Users/jming/.local/bin
    package isort 5.12.0, installed using Python 3.11.3
     - isort
     - isort-identify-imports
-   package jupyter 1.0.0, installed using Python 3.11.3
-    - ipython
-    - ipython3
-    - jsonschema
-    - jupyter
-    - jupyter-bundlerextension
-    - jupyter-console
-    - jupyter-dejavu
-    - jupyter-events
-    - jupyter-execute
-    - jupyter-kernel
-    - jupyter-kernelspec
-    - jupyter-migrate
-    - jupyter-nbclassic
-    - jupyter-nbclassic-bundlerextension
-    - jupyter-nbclassic-extension
-    - jupyter-nbclassic-serverextension
-    - jupyter-nbconvert
-    - jupyter-nbextension
-    - jupyter-notebook
-    - jupyter-qtconsole
-    - jupyter-run
-    - jupyter-server
-    - jupyter-serverextension
-    - jupyter-troubleshoot
-    - jupyter-trust
-    - pygmentize
-    - qtpy
-    - send2trash
-    - wsdump
    package nose 1.3.7, installed using Python 3.11.3
     - nosetests
     - nosetests-3.4
@@ -44,7 +14,5 @@ apps are exposed on your $PATH at /Users/jming/.local/bin
    package pytest 7.3.1, installed using Python 3.11.3
     - py.test
     - pytest
-   package scrapy 2.8.0, installed using Python 3.11.3
-    - scrapy
    package seashells 0.1.2, installed using Python 3.11.3
     - seashells
