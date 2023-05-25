@@ -1,0 +1,10 @@
+direnv
+elixir
+ *1.14.5-otp-26
+erlang
+ *26.0
+nodejs
+ *18.16.0
+python
+  3.10.11
+ *3.11.3
