@@ -14,6 +14,8 @@
 # asdf-direnv plugin manages these
 /asdf-direnv
 /direnv/lib/use_asdf.sh
+# Don't want to check this in
+/karabiner
 
 .DS_Store
 *.log

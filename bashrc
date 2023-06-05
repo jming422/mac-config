@@ -27,6 +27,7 @@ export JAVA_HOME
 export CARGO_HOME="$XDG_CONFIG_HOME/cargo"
 export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 . "/Users/jming/.config/cargo/env"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl/lib/pkgconfig"
 
 # Path
 # Since vterm inherits from Emacs's env which already has the PATH set; don't double set the PATH as this will mess stuff up.

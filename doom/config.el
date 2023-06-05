@@ -85,6 +85,7 @@
   (setq lsp-ui-doc-enable nil)
   (setq lsp-rust-analyzer-proc-macro-enable t)
   (add-to-list 'lsp-language-id-configuration '(crystal-mode . "crystal"))
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.aws-sam\\'")
   (lsp-register-client
    (make-lsp-client :new-connection (lsp-stdio-connection '("crystalline"))
                     :activation-fn (lsp-activate-on "crystal")
