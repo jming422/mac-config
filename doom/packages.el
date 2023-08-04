@@ -59,5 +59,6 @@
 (package! evil-cleverparens)
 (package! fireplace)
 (package! literate-calc-mode)
+(package! mint-mode)
 (package! prettier-js)
 (package! ron-mode)

@@ -170,6 +170,9 @@
 (use-package! ron-mode
   :mode "\\.ron\\'")
 
+(use-package! mint-mode
+  :mode ("\\.mint\\'" . mint-mode))
+
 (after! (pipenv lsp-mode)
   (define-advice pipenv-activate (:after ())
     (when lsp-mode (call-interactively #'lsp-workspace-restart)))
