@@ -1,18 +1,18 @@
 venvs are in /Users/jming/.local/pipx/venvs
 apps are exposed on your $PATH at /Users/jming/.local/bin
-   package black 23.3.0, installed using Python 3.11.3
+   package black 23.7.0, installed using Python 3.11.4
     - black
     - blackd
-   package isort 5.12.0, installed using Python 3.11.3
+   package isort 5.12.0, installed using Python 3.11.4
     - isort
     - isort-identify-imports
-   package nose 1.3.7, installed using Python 3.11.3
+   package nose 1.3.7, installed using Python 3.11.4
     - nosetests
     - nosetests-3.4
-   package pyflakes 3.0.1, installed using Python 3.11.3
+   package pyflakes 3.1.0, installed using Python 3.11.4
     - pyflakes
-   package pytest 7.3.1, installed using Python 3.11.3
+   package pytest 7.4.0, installed using Python 3.11.4
     - py.test
     - pytest
-   package seashells 0.1.2, installed using Python 3.11.3
+   package seashells 0.1.2, installed using Python 3.11.4
     - seashells

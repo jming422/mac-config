@@ -57,7 +57,6 @@ brew "ninja"
 brew "pandoc"
 brew "pgformatter"
 brew "pipx"
-brew "platformio"
 brew "postgresql@14", restart_service: true
 brew "protobuf"
 brew "rabbitmq", restart_service: true
@@ -107,10 +106,9 @@ mas "Microsoft Word", id: 462054704
 mas "OneDrive", id: 823766827
 mas "Pages", id: 409201541
 mas "Yubico Authenticator", id: 1497506650
-vscode "betterthantomorrow.calva"
-vscode "betterthantomorrow.calva-spritz"
 vscode "databricks.databricks"
 vscode "dbaeumer.vscode-eslint"
+vscode "eamodio.gitlens"
 vscode "ecmel.vscode-html-css"
 vscode "esbenp.prettier-vscode"
 vscode "mkhl.direnv"
