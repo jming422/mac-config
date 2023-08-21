@@ -58,7 +58,8 @@
 ;; Additions
 (package! evil-cleverparens)
 (package! fireplace)
+(package! git-link)
 (package! literate-calc-mode)
-(package! mint-mode)
 (package! prettier-js)
 (package! ron-mode)
+(package! string-inflection)

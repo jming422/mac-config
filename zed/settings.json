@@ -9,6 +9,7 @@
 {
   "theme": "Solarized Light",
   "buffer_font_size": 15,
+  "soft_wrap": "editor_width",
   "vim_mode": true,
   "language_overrides": {
     "JavaScript": {
