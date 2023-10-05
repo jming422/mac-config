@@ -1,8 +1,8 @@
-cargo-binstall v1.2.1:
+cargo-binstall v1.4.2:
     cargo-binstall
-cargo-expand v1.0.65:
+cargo-expand v1.0.72:
     cargo-expand
-cargo-shuttle v0.24.0:
+cargo-shuttle v0.28.1:
     cargo-shuttle
-cargo-watch v8.4.0:
+cargo-watch v8.4.1:
     cargo-watch

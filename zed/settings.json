@@ -13,10 +13,11 @@
   "vim_mode": true,
   "language_overrides": {
     "JavaScript": {
-      "format_on_save": {
+      "formatter": {
         "external": {
-          "command": "prettier",
+          "command": "npx",
           "arguments": [
+            "prettier",
             "--stdin-filepath",
             "{buffer_path}"
           ]
@@ -24,7 +25,7 @@
       }
     },
     "Python": {
-      "format_on_save": {
+      "formatter": {
         "external": {
           "command": "black",
           "arguments": [
