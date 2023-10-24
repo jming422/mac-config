@@ -7,6 +7,7 @@ alias ll="ls -alh"
 alias ls="ls -G"
 alias cenv='env -S $(cat .env)'
 alias 🍻='brew update && brew upgrade && brew bundle dump -f && brew bundle'
+alias magit='emacs -nw -f magit-status'
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
@@ -14,7 +15,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 # PS1="\A \w \$ "
 GPG_TTY=$(tty)
 export GPG_TTY
-export EDITOR="emacsclient"
+export EDITOR="vim"
 
 # aws vars
 export SAM_CLI_TELEMETRY=0

@@ -139,9 +139,9 @@
 (add-hook! clojure-mode
   (add-hook 'before-save-hook #'cider-format-buffer t t))
 
-(after! clojure-mode
-  (define-clojure-indent
-    (when-let* 1)))
+;; (after! clojure-mode
+;;   (define-clojure-indent
+;;    (when-let* 1)))
 
 (after! cider
   (setq cider-format-code-options
@@ -157,12 +157,12 @@
   (add-to-list 'vterm-eval-cmds '("update-pwd" (lambda (path) (setq default-directory path)))))
 
 (add-hook! vterm-mode
-  ;; So by default #xe256 gets rendered using all-the-icons' Material Icons as a
-  ;; spacebar icon. But since I've never seen the spacebar icon used
-  ;; (intentionally) and since my starship prompt tries to use that codepoint to
-  ;; hit the Java icon in the Nerd Font, I want to lock that codepoint to the Nerd
-  ;; Font instead of Material Icons.
-  (set-fontset-font t #Xe256 (font-spec :family "JetBrainsMono Nerd Font")))
+           ;; So by default #xe256 gets rendered using all-the-icons' Material Icons as a
+           ;; spacebar icon. But since I've never seen the spacebar icon used
+           ;; (intentionally) and since my starship prompt tries to use that codepoint to
+           ;; hit the Java icon in the Nerd Font, I want to lock that codepoint to the Nerd
+           ;; Font instead of Material Icons.
+           (set-fontset-font t #Xe256 (font-spec :family "JetBrainsMono Nerd Font")))
 
 (add-hook! rainbow-mode
   (hl-line-mode (if rainbow-mode -1 +1)))
@@ -183,8 +183,8 @@
 
 ;; Custom functions & bindings
 (global-set-key (kbd "M-/") #'hippie-expand)
- ;; because with my current keyboard it is uncomfortable to push M-SPC, I want
- ;; H-SPC as an additional option
+;; because with my current keyboard it is uncomfortable to push M-SPC, I want
+;; H-SPC as an additional option
 (global-set-key (kbd "H-SPC") #'just-one-space)
 (global-set-key (kbd "C-§") #'ignore)
 (global-set-key (kbd "<f15>") #'ignore)

@@ -7,23 +7,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Solarized Light",
+  "theme": "Atelier Estuary Light",
   "buffer_font_size": 15,
   "soft_wrap": "editor_width",
   "vim_mode": true,
+  "relative_line_numbers": true,
   "language_overrides": {
-    "JavaScript": {
-      "formatter": {
-        "external": {
-          "command": "npx",
-          "arguments": [
-            "prettier",
-            "--stdin-filepath",
-            "{buffer_path}"
-          ]
-        }
-      }
-    },
     "Python": {
       "formatter": {
         "external": {
