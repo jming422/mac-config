@@ -18,9 +18,8 @@
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
+    "context": "Editor && vim_mode == insert",
     "bindings": {
-      // put key-bindings here if you want them to work in insert mode
       "j k": "vim::NormalBefore"
     }
   }

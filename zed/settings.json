@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "theme": "Atelier Estuary Light",
+  "theme": "Solarized Light",
   "buffer_font_size": 15,
   "soft_wrap": "editor_width",
   "vim_mode": true,
@@ -17,9 +17,7 @@
       "formatter": {
         "external": {
           "command": "black",
-          "arguments": [
-            "-"
-          ]
+          "arguments": ["-"]
         }
       }
     }

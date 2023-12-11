@@ -12,9 +12,7 @@ If this directory is cloned as `~/.config`, then many of these configs will Just
 - gitignore_global
 - ngrok2
 - npmrc
-- simplebarrc
 - vimrc
+- zshrc
 
-To symlink one, cd to `~` and then do something like `ln -s .config/bashrc .bashrc`
-
-The `simplebarrc` you see in there is for https://github.com/Jean-Tinland/simple-bar, which I usually have installed under my fork https://github.com/jming422/simple-bar. I try to issue PRs on my fork back to the original repo, so it's probably best to just install the real one and not use my fork.
+To symlink one, cd to `~` and then do something like `ln -s .config/zshrc .zshrc`

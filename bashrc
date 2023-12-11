@@ -51,6 +51,8 @@ source "${XDG_CONFIG_HOME}/asdf-direnv/bashrc"
 
 # vterm directory tracking
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
+PROMPT_COMMAND="vterm_set_directory${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+
 
 # export SOURCEKIT_TOOLCHAIN_PATH="/Library/Developer/Toolchains/swift-latest.xctoolchain"
 
