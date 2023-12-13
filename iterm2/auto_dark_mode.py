@@ -7,16 +7,23 @@ name maps to the light and dark presets you'd like to use.
 """
 import asyncio
 import iterm2
+import os
 import subprocess
 from collections import namedtuple
 
-ColorPresets = namedtuple('ColorPresets', ['light', 'dark'])
+ColorPresets = namedtuple("ColorPresets", ["light", "dark"])
 """Mapping of Profile Name to Color presets"""
 PROFILE_PRESETS = {
-    # Built in presets
-    'Default': ColorPresets('AtomOneLight', 'Atom'),
-    'J': ColorPresets('AtomOneLight', 'Atom'),
+    "Default": ColorPresets("Tomorrow", "TomorrowNight"),
+    "J": ColorPresets("Tomorrow", "TomorrowNight"),
 }
+
+CONFIG_HOME = os.getenv("XDG_CONFIG_HOME", os.getenv("HOME", "") + "/.config")
+HELIX_THEME_SYMLINK = f"{CONFIG_HOME}/helix/themes/auto_dark_mode.toml"
+HELIX_THEME_DIR = "/opt/homebrew/opt/helix/libexec/runtime/themes"
+
+HELIX_DARK_THEME = "rose_pine"
+HELIX_LIGHT_THEME = "rose_pine_dawn"
 
 
 async def is_dark_theme(monitor=None, app=None):
@@ -27,7 +34,7 @@ async def is_dark_theme(monitor=None, app=None):
     elif app:
         theme = await app.async_get_variable("effectiveTheme")
     else:
-        raise ValueError('Need a monitor or app instance to detect theme')
+        raise ValueError("Need a monitor or app instance to detect theme")
 
     # Themes have space-delimited attributes, one of which will be light or dark.
     parts = theme.split(" ")
@@ -56,15 +63,21 @@ async def gather_presets_for_colors(connection, colors):
 
     This is used to minimize the number of async calls.
     """
+
     async def preset_name_to_preset(preset_name):
         preset = await iterm2.ColorPreset.async_get(connection, preset_name)
         print("Got preset for color {}: {}".format(preset_name, preset))
         return preset_name, preset
 
-    return dict(await asyncio.gather(*[
-        preset_name_to_preset(preset_name)
-        for preset_name in colors if preset_name is not None
-    ]))
+    return dict(
+        await asyncio.gather(
+            *[
+                preset_name_to_preset(preset_name)
+                for preset_name in colors
+                if preset_name is not None
+            ]
+        )
+    )
 
 
 def get_current_colors(partials, dark_mode):
@@ -73,16 +86,28 @@ def get_current_colors(partials, dark_mode):
 
     This allows us to fetch presets only once.
     """
-    return {
-        get_color_for_profile(partial.name, dark_mode)
-        for partial in partials
-    }
+    return {get_color_for_profile(partial.name, dark_mode) for partial in partials}
+
+
+def set_helix_theme(is_dark):
+    helix_theme = (
+        f"{HELIX_THEME_DIR}/{HELIX_DARK_THEME if is_dark else HELIX_LIGHT_THEME}.toml"
+    )
+
+    try:
+        os.remove(HELIX_THEME_SYMLINK)
+    except FileNotFoundError:
+        pass
+
+    os.symlink(helix_theme, HELIX_THEME_SYMLINK)
+
+    subprocess.run(["pkill", "-USR1", "hx"])
 
 
 async def set_dark_colors(connection, dark_mode):
-    """Set dark mode for all open profiles"""
+    """Set/unset dark mode for all open profiles"""
     print("Enable dark mode? {}".format(dark_mode))
-    partials = (await iterm2.PartialProfile.async_query(connection))
+    partials = await iterm2.PartialProfile.async_query(connection)
     all_colors = get_current_colors(partials, dark_mode)
     all_colors = await gather_presets_for_colors(connection, all_colors)
 
@@ -92,6 +117,9 @@ async def set_dark_colors(connection, dark_mode):
             continue
         preset = all_colors[color]
         await partial.async_set_color_preset(preset)
+
+    set_helix_theme(dark_mode)
+
 
 async def main(connection):
     # Set colors initially because of unknown profile defaults
@@ -114,5 +142,5 @@ async def main(connection):
                 dark_colors = dark_theme
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     iterm2.run_forever(main)
