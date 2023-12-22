@@ -95,6 +95,9 @@
 (add-hook! crystal-mode
   (lsp))
 
+(add-hook! nim-mode
+  (lsp))
+
 (after! dap-mode
   (dap-register-debug-template
    "Node::Attach"
