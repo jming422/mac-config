@@ -1,13 +1,9 @@
-crystal
- *1.10.1
 direnv
  *2.33.0
-elixir-ls
- *0.17.10
-elixir
- *1.15.7-otp-26
-erlang
- *26.1.2
+lua-language-server
+ *3.7.4
+lua
+ *5.4.6
 nodejs
  *18.19.0
 python
