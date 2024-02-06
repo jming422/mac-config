@@ -53,8 +53,6 @@
 (unpin! evil-easymotion)
 (package! evil-easymotion :recipe (:host github :repo "CloseToZero/evil-easymotion" :branch "master"))
 
-(package! closql :pin "0a7226331ff1f96142199915c0ac7940bac4afdd")
-
 ;; Additions
 (package! evil-cleverparens)
 (package! fireplace)

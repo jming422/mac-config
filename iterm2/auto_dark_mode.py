@@ -22,8 +22,8 @@ CONFIG_HOME = os.getenv("XDG_CONFIG_HOME", os.getenv("HOME", "") + "/.config")
 HELIX_THEME_SYMLINK = f"{CONFIG_HOME}/helix/themes/auto_dark_mode.toml"
 HELIX_THEME_DIR = "/opt/homebrew/opt/helix/libexec/runtime/themes"
 
-HELIX_DARK_THEME = "rose_pine"
-HELIX_LIGHT_THEME = "rose_pine_dawn"
+HELIX_DARK_THEME = "monokai_pro_ristretto"
+HELIX_LIGHT_THEME = "everforest_light"
 
 
 async def is_dark_theme(monitor=None, app=None):

@@ -21,3 +21,6 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"
 autoload -U add-zsh-hook
 add-zsh-hook -Uz chpwd (){ vterm_set_directory }
+
+# misc
+LESS="-RF"

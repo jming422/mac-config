@@ -1,0 +1,4 @@
+git:
+  fetchAll: false
+refresher:
+  fetchInterval: 180
