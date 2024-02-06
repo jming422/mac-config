@@ -14,8 +14,8 @@ from collections import namedtuple
 ColorPresets = namedtuple("ColorPresets", ["light", "dark"])
 """Mapping of Profile Name to Color presets"""
 PROFILE_PRESETS = {
-    "Default": ColorPresets("Tomorrow", "TomorrowNight"),
-    "J": ColorPresets("Tomorrow", "TomorrowNight"),
+    "Default": ColorPresets("GruvboxLight", "Earthsong"),
+    "J": ColorPresets("GruvboxLight", "Earthsong"),
 }
 
 CONFIG_HOME = os.getenv("XDG_CONFIG_HOME", os.getenv("HOME", "") + "/.config")
