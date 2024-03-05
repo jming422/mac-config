@@ -142,10 +142,6 @@
 (add-hook! clojure-mode
   (add-hook 'before-save-hook #'cider-format-buffer t t))
 
-;; (after! clojure-mode
-;;   (define-clojure-indent
-;;    (when-let* 1)))
-
 (after! cider
   (setq cider-format-code-options
         '(("indents" (("when-let*" (("block" 1)))

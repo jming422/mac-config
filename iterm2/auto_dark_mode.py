@@ -14,8 +14,8 @@ from collections import namedtuple
 ColorPresets = namedtuple("ColorPresets", ["light", "dark"])
 """Mapping of Profile Name to Color presets"""
 PROFILE_PRESETS = {
-    "Default": ColorPresets("GruvboxLight", "Earthsong"),
-    "J": ColorPresets("GruvboxLight", "Earthsong"),
+    "Default": ColorPresets("Solarized Light", "Earthsong"),
+    "J": ColorPresets("Solarized Light", "Earthsong"),
 }
 
 CONFIG_HOME = os.getenv("XDG_CONFIG_HOME", os.getenv("HOME", "") + "/.config")
@@ -23,7 +23,7 @@ HELIX_THEME_SYMLINK = f"{CONFIG_HOME}/helix/themes/auto_dark_mode.toml"
 HELIX_THEME_DIR = "/opt/homebrew/opt/helix/libexec/runtime/themes"
 
 HELIX_DARK_THEME = "monokai_pro_ristretto"
-HELIX_LIGHT_THEME = "everforest_light"
+HELIX_LIGHT_THEME = "solarized_light"
 
 
 async def is_dark_theme(monitor=None, app=None):
