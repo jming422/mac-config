@@ -1,3 +1,16 @@
+# this is because Prettier formats package.json files differently than any other json file 🤦
+# to get this to work, symlink runtime/queries/json to runtime/queries/package.json
+# Thank you https://github.com/helix-editor/helix/issues/3596#issuecomment-1853407163
+[[language]]
+name = "package.json"
+scope = "source.json"
+roots = ["package.json"]
+file-types = ["package.json", "package-lock.json", "composer.json"]
+formatter = { command = "npx", args = ["prettier", "--stdin-filepath", "package.json"] }
+# language-servers = ["vscode-json-language-server"]
+auto-format = true
+grammar = "json"
+
 [[language]]
 name = "markdown"
 formatter = { command = 'npx', args = ["prettier", "--parser", "markdown"] }
