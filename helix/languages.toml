@@ -5,7 +5,7 @@
 name = "package.json"
 scope = "source.json"
 roots = ["package.json"]
-file-types = ["package.json", "package-lock.json", "composer.json"]
+file-types = [{ glob = "package.json" }, { glob = "package-lock.json" }, { glob = "composer.json" }]
 formatter = { command = "npx", args = ["prettier", "--stdin-filepath", "package.json"] }
 # language-servers = ["vscode-json-language-server"]
 auto-format = true

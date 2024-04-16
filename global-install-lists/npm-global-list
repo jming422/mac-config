@@ -1,9 +1,9 @@
-/Users/jming/.asdf/installs/nodejs/18.19.1/lib
-├── corepack@0.26.0
-├── markdownlint@0.33.0
-├── npm@10.5.0
+/Users/jming/.asdf/installs/nodejs/20.12.2/lib
+├── corepack@0.25.2
+├── markdownlint@0.34.0
+├── npm@10.5.2
 ├── prettier@3.2.5
-├── pyright@1.1.353
+├── pyright@1.1.358
 ├── typescript-language-server@4.3.3
-└── typescript@5.4.2
+└── typescript@5.4.5
 
