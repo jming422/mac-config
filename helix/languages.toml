@@ -1,3 +1,22 @@
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+
+# I know it looks like some of these options are set to their defaults and shouldn't be required
+# THEY ARE ALL REQUIRED! Any other config than this that I have tried does not work
+[language-server.eslint.config]
+nodePath = ""
+quiet = false
+rulesCustomizations = []
+run = "onType"
+validate = "on"
+experimental = {}
+problems = { shortenToSingleLine = false }
+
+[language-server.eslint.config.codeAction]
+disableRuleComment = { enable = true, location = "separateLine" }
+showDocumentation = { enable = false }
+
 # this is because Prettier formats package.json files differently than any other json file 🤦
 # to get this to work, symlink runtime/queries/json to runtime/queries/package.json
 # Thank you https://github.com/helix-editor/helix/issues/3596#issuecomment-1853407163
@@ -32,16 +51,19 @@ auto-format = true
 
 [[language]]
 name = "javascript"
+language-servers = [ "typescript-language-server", "eslint" ]
 formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
+language-servers = [ "typescript-language-server", "eslint" ]
 formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
+language-servers = [ "typescript-language-server", "eslint" ]
 formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
 auto-format = true
 
