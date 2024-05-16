@@ -52,19 +52,19 @@ auto-format = true
 [[language]]
 name = "javascript"
 language-servers = [ "typescript-language-server", "eslint" ]
-formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+formatter = { command = 'npx', args = ["prettier", "--parser", "babel"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
 language-servers = [ "typescript-language-server", "eslint" ]
-formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+formatter = { command = 'npx', args = ["prettier", "--parser", "babel"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
 language-servers = [ "typescript-language-server", "eslint" ]
-formatter = { command = 'npx', args = ["prettier", "--parser", "typescript"] }
+formatter = { command = 'npx', args = ["prettier", "--parser", "babel"] }
 auto-format = true
 
 [[language]]
