@@ -1,7 +1,6 @@
 theme = "auto_dark_mode"
 
 [editor]
-line-number = "relative"
 file-picker.hidden = false
 
 [keys.insert]
