@@ -79,3 +79,7 @@ args = ["--quiet", "-"]
 [[language]]
 name = "clojure"
 auto-format = true
+
+[[language]]
+name = "cpp"
+auto-format = true
