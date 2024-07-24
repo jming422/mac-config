@@ -6,7 +6,7 @@ manual pages are exposed at /Users/jming/.local/share/man
     - nosetests-3.4
    package pyflakes 3.2.0, installed using Python 3.12.1
     - pyflakes
-   package pytest 8.2.2, installed using Python 3.12.1
+   package pytest 8.3.1, installed using Python 3.12.1
     - py.test
     - pytest
    package seashells 0.1.2, installed using Python 3.12.1
