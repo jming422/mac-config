@@ -6,5 +6,5 @@
 ├── pyright@1.1.375
 ├── typescript-language-server@4.3.3
 ├── typescript@5.5.4
-└── vscode-langservers-extracted@4.10.0
+└── vscode-langservers-extracted@4.8.0
 
