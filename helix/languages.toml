@@ -32,49 +32,46 @@ grammar = "json"
 
 [[language]]
 name = "markdown"
-formatter = { command = 'npx', args = ["prettier", "--parser", "markdown"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "markdown"] }
 auto-format = true
 
 [[language]]
 name = "html"
-formatter = { command = 'npx', args = ["prettier", "--parser", "html"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "html"] }
 
 [[language]]
 name = "json"
-formatter = { command = 'npx', args = ["prettier", "--parser", "json"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "json"] }
 auto-format = true
 
 [[language]]
 name = "css"
-formatter = { command = 'npx', args = ["prettier", "--parser", "css"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "css"] }
 auto-format = true
 
 [[language]]
 name = "javascript"
 language-servers = [ "typescript-language-server", "eslint" ]
-formatter = { command = 'npx', args = ["prettier", "--parser", "babel"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "babel"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
 language-servers = [ "typescript-language-server", "eslint" ]
-formatter = { command = 'npx', args = ["prettier", "--parser", "babel"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "babel"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
 language-servers = [ "typescript-language-server", "eslint" ]
-formatter = { command = 'npx', args = ["prettier", "--parser", "babel"] }
+formatter = { command = "npx", args = ["prettier", "--parser", "babel"] }
 auto-format = true
 
 [[language]]
 name = "python"
 language-servers = ["pyright"]
+formatter = { command = "python", args = ["-m", "black", "--quiet", "-"] }
 auto-format = true
-
-[language.formatter]
-command = "black"
-args = ["--quiet", "-"]
 
 [[language]]
 name = "clojure"

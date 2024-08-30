@@ -10,6 +10,15 @@ local function replace_literal(str, what, with)
     return str:gsub(what, with)
 end
 
+-- https://wezfurlong.org/wezterm/config/lua/PaneInformation.html?h=basename
+-- Equivalent to POSIX basename(3)
+-- Given "/foo/bar" returns "bar"
+-- Given "c:\\foo\\bar" returns "bar"
+function basename(s)
+  local res, _count = s:gsub('(.*[/\\])(.*)', '%2')
+  return res:gsub('%s+', '')
+end
+
 local color
 if appearance.is_dark() then
   color = appearance.dark_colors
@@ -60,16 +69,40 @@ config.inactive_pane_hsb = {
   brightness = 0.8,
 }
 
+local function get_git_repo_name(dir)
+  local success, stdout, _stderr =  wezterm.run_child_process { 'git', '-C', dir, 'rev-parse', '--show-toplevel' }
+  if success then
+    return wezterm.nerdfonts.dev_git .. ' ' .. basename(stdout)
+  end
+
+  return nil
+end
+
 local max_cwd_segment_width = 20
 
-local function segments_for_right_status(window, pane)
+local function resolve_cwd_for_status(pane)
   local cwd_url = pane:get_current_working_dir()
-  local cwd = cwd_url and cwd_url.file_path or ""
+  if not cwd_url then
+    return ""
+  end
+
+  local cwd = cwd_url.file_path
+
+  local maybe_repo = get_git_repo_name(cwd)
+  if maybe_repo then
+    return maybe_repo
+  end
+
   cwd = replace_literal(cwd, wezterm.home_dir, "~")
   if cwd:len() > max_cwd_segment_width then
     cwd = '...' .. wezterm.truncate_left(cwd, max_cwd_segment_width)
   end
 
+  return cwd
+end
+
+local function segments_for_right_status(window, pane)
+  local cwd = resolve_cwd_for_status(pane)
   local leader_indicator = window:is_focused() and (window:leader_is_active() and '◉' or '○') or '◌'
 
   return {
@@ -80,7 +113,7 @@ local function segments_for_right_status(window, pane)
 end
 
 wezterm.on('update-status', function(window, pane)
-  local SOLID_LEFT_ARROW = utf8.char(0xe0b2)
+  local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
   local segments = segments_for_right_status(window, pane)
 
   local color_scheme = window:effective_config().resolved_palette

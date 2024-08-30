@@ -23,16 +23,16 @@ end
 function module.set_helix_dark()
   local link = wezterm.home_dir .. '/.config/helix/themes/auto_dark_mode.toml'
   os.remove(link)
-  os.execute('ln -s /opt/homebrew/opt/helix/libexec/runtime/themes/everforest_dark.toml ' .. link)
-  os.execute('pkill -USR1 hx')
+  wezterm.run_child_process {'ln', '-s', '/opt/homebrew/opt/helix/libexec/runtime/themes/everforest_dark.toml', link}
+  wezterm.run_child_process {'pkill', '-USR1', 'hx'}
 end
 
 -- Sets my Helix theme to light mode
 function module.set_helix_light()
   local link = wezterm.home_dir .. '/.config/helix/themes/auto_dark_mode.toml'
   os.remove(link)
-  os.execute('ln -s /opt/homebrew/opt/helix/libexec/runtime/themes/everforest_light.toml ' .. link)
-  os.execute('pkill -USR1 hx')
+  wezterm.run_child_process {'ln', '-s', '/opt/homebrew/opt/helix/libexec/runtime/themes/everforest_light.toml', link}
+  wezterm.run_child_process {'pkill', '-USR1', 'hx'}
 end
 
 module.dark_colors = {

@@ -9,7 +9,7 @@ layouts:
   # - tall-right
   - wide
   # - two-pane
-  # - middle-wide
+  - middle-wide
   # - 3column-left
   # - 3column-middle
   # - 3column-right
