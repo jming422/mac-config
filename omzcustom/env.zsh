@@ -15,7 +15,6 @@ export RUSTUP_HOME="$XDG_CONFIG_HOME/rustup"
 
 # Load scripts
 . "/Users/jming/.config/cargo/env"
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
 # emacs vterm directory tracking
 source "$XDG_CONFIG_HOME/vterm-dir-tracking.sh"

@@ -99,6 +99,7 @@ cask "signal"
 cask "temurin@17"
 cask "visual-studio-code"
 cask "vscodium"
+cask "wezterm"
 mas "Keynote", id: 409183694
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft OneNote", id: 784801555

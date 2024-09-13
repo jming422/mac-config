@@ -1,6 +1,6 @@
-cargo-binstall v1.7.4:
+cargo-binstall v1.10.5:
     cargo-binstall
-cargo-expand v1.0.88:
+cargo-expand v1.0.90:
     cargo-expand
 cargo-shuttle v0.47.0:
     cargo-shuttle
