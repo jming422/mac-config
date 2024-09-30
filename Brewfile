@@ -22,7 +22,6 @@ brew "asdf"
 brew "awk"
 brew "sqlite"
 brew "aws-sam-cli"
-brew "python@3.11"
 brew "awscli"
 brew "bash"
 brew "bash-completion@2"
@@ -63,6 +62,7 @@ brew "pipx"
 brew "pkg-config"
 brew "postgresql@15", restart_service: true, link: true
 brew "protobuf"
+brew "python@3.11"
 brew "qemu"
 brew "rabbitmq", restart_service: true
 brew "redis", restart_service: true
