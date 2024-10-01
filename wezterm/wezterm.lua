@@ -65,8 +65,8 @@ config.window_padding = {
 }
 
 config.inactive_pane_hsb = {
-  saturation = 0.9,
-  brightness = 0.8,
+  saturation = 0.8,
+  brightness = 0.6,
 }
 
 local function get_git_repo_name(dir)
