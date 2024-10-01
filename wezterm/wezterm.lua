@@ -116,22 +116,18 @@ wezterm.on('update-status', function(window, pane)
   local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
   local segments = segments_for_right_status(window, pane)
 
-  local color_scheme = window:effective_config().resolved_palette
   -- Note the use of wezterm.color.parse here, this returns
   -- a Color object, which comes with functionality for lightening
   -- or darkening the colour (amongst other things).
-  local bg = wezterm.color.parse(color_scheme.background)
-  local fg = color_scheme.foreground
-
   -- Each powerline segment is going to be coloured progressively
   -- darker/lighter depending on whether we're on a dark/light colour
   -- scheme. Let's establish the "from" and "to" bounds of our gradient.
-  local gradient_to = bg
-  local gradient_from
+  local gradient_to = wezterm.color.parse(color.gradient_to)
+  local gradient_from = wezterm.color.parse(color.gradient_from)
   if appearance.is_dark() then
-    gradient_from = gradient_to:lighten(0.2)
+    gradient_from = gradient_from:darken(0.5)
   else
-    gradient_from = gradient_to:darken(0.2)
+    gradient_from = gradient_from:lighten(0.5)
   end
 
   -- Yes, WezTerm supports creating gradients, because why not?! Although
@@ -158,7 +154,7 @@ wezterm.on('update-status', function(window, pane)
     table.insert(elements, { Foreground = { Color = gradient[i] } })
     table.insert(elements, { Text = SOLID_LEFT_ARROW })
 
-    table.insert(elements, { Foreground = { Color = fg } })
+    table.insert(elements, { Foreground = { Color = color.fg } })
     table.insert(elements, { Background = { Color = gradient[i] } })
     table.insert(elements, { Text = ' ' .. seg .. ' ' })
   end

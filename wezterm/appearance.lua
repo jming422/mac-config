@@ -44,6 +44,8 @@ module.dark_colors = {
   bg3 = '#44415a',    -- highlight med
   bg4 = '#2a283e',    -- highlight low
   bg5 = '#56526e',    -- highlight high
+  gradient_from = '#c4a7e7', -- iris
+  gradient_to = '#2a273f',   -- surface
 }
 
 -- Rosé Pine Dawn
@@ -55,6 +57,8 @@ module.light_colors = {
   bg3 = '#dfdad9',    -- highlight med
   bg4 = '#f4ede8',    -- highlight low
   bg5 = '#cecacd',    -- highlight high
+  gradient_from = '#907aa9', -- iris
+  gradient_to = '#fffaf3',   -- surface
 }
 
 return module
