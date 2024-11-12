@@ -1,9 +1,9 @@
-/Users/jming/.asdf/installs/nodejs/22.10.0/lib
+/Users/jming/.asdf/installs/nodejs/22.11.0/lib
 ├── corepack@0.29.4
-├── markdownlint@0.35.0
+├── markdownlint@0.36.1
 ├── npm@10.9.0
 ├── prettier@3.3.3
-├── pyright@1.1.385
+├── pyright@1.1.388
 ├── typescript-language-server@4.3.3
 ├── typescript@5.6.3
 └── vscode-langservers-extracted@4.10.0
