@@ -69,6 +69,8 @@ config.inactive_pane_hsb = {
   brightness = 0.6,
 }
 
+config.scrollback_lines = 10000
+
 local function get_git_repo_name(dir)
   local success, stdout, _stderr =  wezterm.run_child_process { 'git', '-C', dir, 'rev-parse', '--show-toplevel' }
   if success then
