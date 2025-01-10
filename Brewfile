@@ -73,7 +73,7 @@ brew "rust-analyzer"
 brew "shellcheck"
 brew "shfmt"
 brew "starship"
-brew "trash"
+brew "trash", link: true
 brew "tuntox"
 brew "watchman"
 brew "borkdude/brew/clj-kondo"

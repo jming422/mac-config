@@ -1,4 +1,6 @@
-cargo-binstall v1.10.12:
+cargo-binstall v1.10.18:
     cargo-binstall
 cargo-watch v8.5.3:
     cargo-watch
+lsp-ai v0.7.0:
+    lsp-ai
