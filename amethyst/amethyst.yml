@@ -172,24 +172,24 @@ throw-screen-3:
 #   key: i
 
 # Select tall layout
-# select-tall-layout:
-#   mod: mod1
-#   key: a
+select-tall-layout:
+  mod: <NONE>
+  key: <NONE>
 
 # Select wide layout
-# select-wide-layout:
-#   mod: mod1
-#   key: s
+select-wide-layout:
+  mod: <NONE>
+  key: <NONE>
 
 # Select fullscreen layout
-# select-fullscreen-layout:
-#   mod: mod1
-#   key: d
+select-fullscreen-layout:
+  mod: <NONE>
+  key: <NONE>
 
 # Select column layout
-# select-column-layout:
-#   mod: mod1
-#   key: f
+select-column-layout:
+  mod: <NONE>
+  key: <NONE>
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
