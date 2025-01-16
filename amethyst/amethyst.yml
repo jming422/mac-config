@@ -113,13 +113,13 @@ focus-cw:
 
 # Focus the next screen in the list going counter-clockwise.
 focus-screen-ccw:
-  mod: mod1
-  key: j
+  mod: <NONE>
+  key: <NONE>
 
 # Focus the next screen in the list going clockwise.
 focus-screen-cw:
-  mod: mod1
-  key: k
+  mod: <NONE>
+  key: <NONE>
 
 # Move the currently focused window onto the next screen in the list going counter-clockwise.
 # swap-screen-ccw:
