@@ -61,12 +61,12 @@ brew "pgformatter"
 brew "pigz"
 brew "pipx"
 brew "pkgconf"
-brew "postgresql@15", restart_service: true, link: true
+brew "postgresql@15", restart_service: :changed, link: true
 brew "protobuf"
 brew "python@3.11"
 brew "qemu"
-brew "rabbitmq", restart_service: true
-brew "redis", restart_service: true
+brew "rabbitmq", restart_service: :changed
+brew "redis", restart_service: :changed
 brew "ripgrep"
 brew "rlwrap"
 brew "rust-analyzer"
