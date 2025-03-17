@@ -1,7 +1,7 @@
 venvs are in /Users/jming/.local/pipx/venvs
 apps are exposed on your $PATH at /Users/jming/.local/bin
 manual pages are exposed at /Users/jming/.local/share/man
-   package basedpyright 1.23.1, installed using Python 3.12.7
+   package basedpyright 1.28.1, installed using Python 3.12.7
     - basedpyright
     - basedpyright-langserver
    package nose 1.3.7, installed using Python 3.12.1
@@ -9,10 +9,10 @@ manual pages are exposed at /Users/jming/.local/share/man
     - nosetests-3.4
    package pyflakes 3.2.0, installed using Python 3.12.1
     - pyflakes
-   package pytest 8.3.4, installed using Python 3.12.1
+   package pytest 8.3.5, installed using Python 3.12.1
     - py.test
     - pytest
-   package ruff 0.8.5, installed using Python 3.12.7
+   package ruff 0.11.0, installed using Python 3.12.7
     - ruff
    package seashells 1.0.0, installed using Python 3.12.1
     - seashells

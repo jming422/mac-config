@@ -11,9 +11,6 @@
 # These contain tokens
 /ngrok2/ngrok.yml
 /exercism/user.json
-# asdf-direnv plugin manages these
-/asdf-direnv
-/direnv/lib/use_asdf.sh
 # Don't want to check these in
 /karabiner
 /1Password

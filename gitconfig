@@ -1,6 +1,6 @@
 [user]
 	name = Jonathan Ming
-	email = jming422@gmail.com
+	email = jonathan@reveelgroup.com
 	signingkey = 8DF093928BE30B9B
 [core]
 	excludesFile = ~/.gitignore_global
