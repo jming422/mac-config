@@ -22,11 +22,11 @@ end
 local color
 if appearance.is_dark() then
   color = appearance.dark_colors
-  config.color_scheme = 'Rosé Pine Moon (Gogh)'
+  config.color_scheme = 'Ayu Dark (Gogh)'
   appearance.set_helix_dark()
 else
   color = appearance.light_colors
-  config.color_scheme = 'Rosé Pine Dawn (Gogh)'
+  config.color_scheme = 'Ayu Light (Gogh)'
   appearance.set_helix_light()
 end
 

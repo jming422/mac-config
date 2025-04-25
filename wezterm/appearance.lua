@@ -23,7 +23,7 @@ end
 function module.set_helix_dark()
   local link = wezterm.home_dir .. '/.config/helix/themes/auto_dark_mode.toml'
   os.remove(link)
-  wezterm.run_child_process {'ln', '-s', '/opt/homebrew/opt/helix/libexec/runtime/themes/rose_pine_moon.toml', link}
+  wezterm.run_child_process {'ln', '-s', '/opt/homebrew/opt/helix/libexec/runtime/themes/ayu_dark.toml', link}
   wezterm.run_child_process {'pkill', '-USR1', 'hx'}
 end
 
@@ -31,34 +31,34 @@ end
 function module.set_helix_light()
   local link = wezterm.home_dir .. '/.config/helix/themes/auto_dark_mode.toml'
   os.remove(link)
-  wezterm.run_child_process {'ln', '-s', '/opt/homebrew/opt/helix/libexec/runtime/themes/rose_pine_dawn.toml', link}
+  wezterm.run_child_process {'ln', '-s', '/opt/homebrew/opt/helix/libexec/runtime/themes/ayu_light.toml', link}
   wezterm.run_child_process {'pkill', '-USR1', 'hx'}
 end
 
--- Rosé Pine Moon
+-- Ayu Dark
 module.dark_colors = {
-  fg = '#e0def4',     -- text
-  fg_dim = '#c4a7e7', -- subtle
-  bg1 = '#232136',    -- base
-  bg2 = '#2a273f',    -- surface
-  bg3 = '#44415a',    -- highlight med
-  bg4 = '#2a283e',    -- highlight low
-  bg5 = '#56526e',    -- highlight high
-  gradient_from = '#c4a7e7', -- iris
-  gradient_to = '#2a273f',   -- surface
+  fg = '#bfbdb6',     -- active & hover fg (editor.fg)
+  fg_dim = '#565b66', -- inactive & new fg (ui.fg)
+  bg1 = '#0b0e14',    -- inactive_titlebar_bg (ui.bg)
+  bg2 = '#0f131a',    -- active_titlebar_bg (ui.panel.bg)
+  bg3 = '#0d1017',    -- inactive_tab_hover bg (editor.bg)
+  bg4 = '#0b0e14',    -- new_tab & inactive_tab bg (ui.bg)
+  bg5 = '#29aad6',    -- new_tab_hover & active_tab bg (syntax.tag, darkened #101010)
+  gradient_from = '#39bae6', -- status line gradient (syntax.tag)
+  gradient_to = '#0f131a',   -- status line gradient (ui.panel.bg)
 }
 
--- Rosé Pine Dawn
+-- Ayu Light
 module.light_colors = {
-  fg = '#575279',     -- text
-  fg_dim = '#797593', -- subtle
-  bg1 = '#faf4ed',    -- base
-  bg2 = '#fffaf3',    -- surface
-  bg3 = '#dfdad9',    -- highlight med
-  bg4 = '#f4ede8',    -- highlight low
-  bg5 = '#cecacd',    -- highlight high
-  gradient_from = '#907aa9', -- iris
-  gradient_to = '#fffaf3',   -- surface
+  fg = '#5c6166',     -- active & hover fg (editor.fg)
+  fg_dim = '#8a9199', -- inactive & new fg (ui.fg)
+  bg1 = '#f8f9fa',    -- inactive_titlebar_bg (ui.bg)
+  bg2 = '#f3f4f5',    -- active_titlebar_bg (ui.panel.bg)
+  bg3 = '#fcfcfc',    -- inactive_tab_hover bg (editor.bg)
+  bg4 = '#f8f9fa',    -- new_tab & inactive_tab bg (ui.bg)
+  bg5 = '#65c4e4',    -- new_tab_hover & active_tab bg (syntax.tag, lightened #101010)
+  gradient_from = '#55b4d4', -- status line gradient (syntax.tag)
+  gradient_to = '#f3f4f5',   -- status line gradient (ui.panel.bg)
 }
 
 return module
