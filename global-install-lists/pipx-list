@@ -12,7 +12,7 @@ manual pages are exposed at /Users/jming/.local/share/man
    package pytest 8.3.5, installed using Python 3.12.1
     - py.test
     - pytest
-   package ruff 0.11.7, installed using Python 3.12.7
+   package ruff 0.11.9, installed using Python 3.12.7
     - ruff
    package seashells 1.0.0, installed using Python 3.12.1
     - seashells
