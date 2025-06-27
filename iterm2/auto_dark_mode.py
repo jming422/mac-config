@@ -5,25 +5,27 @@ Auto_Dark_Mode_Colors auto set profile colors based on iTerm2 theme.
 To configure, update the mapping in `PROFILE_PRESETS` such that the profile
 name maps to the light and dark presets you'd like to use.
 """
+
 import asyncio
-import iterm2
 import os
 import subprocess
 from collections import namedtuple
 
+import iterm2
+
 ColorPresets = namedtuple("ColorPresets", ["light", "dark"])
 """Mapping of Profile Name to Color presets"""
 PROFILE_PRESETS = {
-    "Default": ColorPresets("Solarized Light", "Earthsong"),
-    "J": ColorPresets("Solarized Light", "Earthsong"),
+    "Default": ColorPresets("ayu_light", "ayu"),
+    "J": ColorPresets("ayu_light", "ayu"),
 }
 
 CONFIG_HOME = os.getenv("XDG_CONFIG_HOME", os.getenv("HOME", "") + "/.config")
 HELIX_THEME_SYMLINK = f"{CONFIG_HOME}/helix/themes/auto_dark_mode.toml"
 HELIX_THEME_DIR = "/opt/homebrew/opt/helix/libexec/runtime/themes"
 
-HELIX_DARK_THEME = "monokai_pro_ristretto"
-HELIX_LIGHT_THEME = "solarized_light"
+HELIX_DARK_THEME = "ayu_dark"
+HELIX_LIGHT_THEME = "ayu_light"
 
 
 async def is_dark_theme(monitor=None, app=None):
