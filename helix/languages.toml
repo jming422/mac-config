@@ -1,84 +1,3 @@
-### Start lsp-ai config
-
-[language-server.lsp-ai]
-command = "lsp-ai"
-
-## Model configs
-
-[language-server.lsp-ai.config.memory]
-file_store = { }
-
-[language-server.lsp-ai.config.models.model1]
-type = "open_ai"
-chat_endpoint = "https://api.openai.com/v1/chat/completions"
-model = "gpt-4o"
-auth_token_env_var_name = "LSP_AI_OPENAI_API_KEY"
-max_requests_per_second = 5
-
-## Chat mode config
-
-[[language-server.lsp-ai.config.chat]]
-trigger = "!C"
-action_display_name = "Chat"
-model = "model1"
-
-[language-server.lsp-ai.config.chat.parameters]
-max_context = 4096
-max_tokens = 1024
-
-[[language-server.lsp-ai.config.chat.parameters.messages]]
-role = "system"
-content = "You are a code assistant chatbot. The user will ask you for assistance coding and you will do you best to answer succinctly and accurately"
-
-## Chat mode config (with context)
-
-[[language-server.lsp-ai.config.chat]]
-trigger = "!C"
-action_display_name = "Chat with context"
-model = "model1"
-
-[language-server.lsp-ai.config.chat.parameters]
-max_context = 4096
-max_tokens = 1024
-
-[[language-server.lsp-ai.config.chat.parameters.messages]]
-role = "system"
-content = "You are a code assistant chatbot. The user will ask you for assistance coding and you will do you best to answer succinctly and accurately given the code context:\n\n{CONTEXT}"
-
-## Completion mode config
-
-[[language-server.lsp-ai.config.actions]]
-action_display_name = "Complete"
-model = "model1"
-
-[language-server.lsp-ai.config.actions.parameters]
-max_context = 4096
-max_tokens = 4096
-system = "You are an AI coding assistant. Your task is to complete code snippets. The user's cursor position is marked by \"<CURSOR>\". Follow these steps:\n\n1. Analyze the code context and the cursor position.\n2. Provide your chain of thought reasoning, wrapped in <reasoning> tags. Include thoughts about the cursor position, what needs to be completed, and any necessary formatting.\n3. Determine the appropriate code to complete the current thought, including finishing partial words or lines.\n4. Replace \"<CURSOR>\" with the necessary code, ensuring proper formatting and line breaks.\n5. Wrap your code solution in <answer> tags. Only code should be in <answer>, not reasoning.\n\nYour response should always include both the reasoning and the answer. Pay special attention to completing partial words or lines before adding new lines of code.\n\n<examples>\n<example>\nUser input:\n--main.py--\n# A function that reads in user inpu<CURSOR>\n\nResponse:\n<reasoning>\n1. The cursor is positioned after \"inpu\" in a comment describing a function that reads user input.\n2. We need to complete the word \"input\" in the comment first.\n3. After completing the comment, we should add a new line before defining the function.\n4. The function should use Python's built-in `input()` function to read user input.\n5. We'll name the function descriptively and include a return statement.\n</reasoning>\n\n<answer>t\ndef read_user_input():\n    user_input = input(\"Enter your input: \")\n    return user_input\n</answer>\n</example>\n\n<example>\nUser input:\n--main.py--\ndef fibonacci(n):\n    if n <= 1:\n        return n\n    else:\n        re<CURSOR>\n\n\nResponse:\n<reasoning>\n1. The cursor is positioned after \"re\" in the 'else' clause of a recursive Fibonacci function.\n2. We need to complete the return statement for the recursive case.\n3. The \"re\" already present likely stands for \"return\", so we'll continue from there.\n4. The Fibonacci sequence is the sum of the two preceding numbers.\n5. We should return the sum of fibonacci(n-1) and fibonacci(n-2).\n</reasoning>\n\n<answer>turn fibonacci(n-1) + fibonacci(n-2)</answer>\n</example>\n</examples>"
-messages = [{ role = "user", content = "{CODE}" }]
-post_process = { extractor = "(?s)<answer>(.*?)</answer>" }
-
-### End lsp-ai config
-
-[language-server.eslint]
-command = "vscode-eslint-language-server"
-args = ["--stdio"]
-
-# I know it looks like some of these options are set to their defaults and shouldn't be required
-# THEY ARE ALL REQUIRED! Any other config than this that I have tried does not work
-[language-server.eslint.config]
-nodePath = ""
-quiet = false
-rulesCustomizations = []
-run = "onType"
-validate = "on"
-experimental = {}
-problems = { shortenToSingleLine = false }
-
-[language-server.eslint.config.codeAction]
-disableRuleComment = { enable = true, location = "separateLine" }
-showDocumentation = { enable = false }
-
 # this is because Prettier formats package.json files differently than any other json file 🤦
 # to get this to work, symlink runtime/queries/json to runtime/queries/package.json
 # Thank you https://github.com/helix-editor/helix/issues/3596#issuecomment-1853407163
@@ -87,59 +6,67 @@ name = "package.json"
 scope = "source.json"
 roots = ["package.json"]
 file-types = [{ glob = "package.json" }, { glob = "package-lock.json" }, { glob = "composer.json" }]
-formatter = { command = "npx", args = ["prettier", "--stdin-filepath", "package.json"] }
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 # language-servers = ["vscode-json-language-server"]
 auto-format = true
 grammar = "json"
 
 [[language]]
 name = "markdown"
-language-servers = ["lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "markdown"] }
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
-name = "toml"
-language-servers = ["lsp-ai"]
-
-[[language]]
 name = "html"
-language-servers = ["vscode-html-language-server", "lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "html"] }
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 
 [[language]]
 name = "json"
-language-servers = ["vscode-json-language-server", "lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "json"] }
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "css"
-language-servers = ["vscode-css-language-server", "lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "css"] }
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "javascript"
-language-servers = ["typescript-language-server", "eslint", "lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "babel"] }
+language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "typescript"
-language-servers = ["typescript-language-server", "eslint", "lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "babel"] }
+language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "tsx"
-language-servers = ["typescript-language-server", "eslint", "lsp-ai"]
-formatter = { command = "npx", args = ["prettier", "--parser", "babel"] }
+language-servers = ["typescript-language-server", "vscode-eslint-language-server"]
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
+auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "npx", args = ["--", "prettier", "--stdin-filepath", "%{buffer_name}"] }
 auto-format = true
 
 [[language]]
 name = "python"
-language-servers = ["basedpyright", "ruff", "lsp-ai"]
+language-servers = ["basedpyright", "ruff"]
 formatter = { command = "sh", args = ["-c", "ruff format - | ruff check --select I --fix -"] }
 auto-format = true
 
@@ -149,10 +76,9 @@ args = ["server"]
 
 [[language]]
 name = "clojure"
-language-servers = ["clojure-lsp", "lsp-ai"]
+formatter = { command = "cljfmt", args = ["fix", "-"] }
 auto-format = true
 
 [[language]]
 name = "cpp"
-language-servers = ["clangd", "lsp-ai"]
 auto-format = true

@@ -4,27 +4,44 @@
     "bindings": {
       // Put key bindings here if you want them to work in normal & visual mode.
       "alt-o": "vim::SelectLargerSyntaxNode",
-      "alt-i": "vim::SelectSmallerSyntaxNode"
+      "alt-i": "vim::SelectSmallerSyntaxNode",
+      "space space": "file_finder::Toggle",
+      "space /": "pane::DeploySearch"
     }
   },
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
-      // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
-    }
-  },
+  // {
+  //   "context": "vim_mode == normal && !menu",
+  //   "bindings": {
+  //     // "shift-y": ["workspace::SendKeystrokes", "y $"] // Use neovim's yank behavior: yank to end of line.
+  //   }
+  // },
   {
     "context": "vim_mode == insert",
     "bindings": {
-      "j k": "vim::HelixNormalAfter" // In insert mode, make jk escape to normal mode.
+      "j k": "vim::NormalBefore" // In insert mode, make jk escape to normal mode.
     }
   },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-s": "vim::PushAddSurrounds"
+    }
+  },
+  // this isn't working :(
+  // {
+  //   "context": "vim_operator == m",
+  //   "bindings": {
+  //     "s": ["vim::PushAddSurrounds", {}],
+  //     "d": "vim::PushDeleteSurrounds"
+  //   }
+  // },
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       // Put key bindings here (in addition to the context above) if you want them to
       // work when no editor exists.
-      // "space f": "file_finder::Toggle"
+      "space space": "file_finder::Toggle",
+      "space /": "pane::DeploySearch"
     }
   }
 ]

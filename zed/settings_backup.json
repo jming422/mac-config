@@ -8,15 +8,6 @@
 // from the command palette or from `Zed` application menu.
 {
   "context_servers": {
-    "weather": {
-      "source": "custom",
-      "enabled": false,
-      "command": "node",
-      "args": [
-        "/Users/jming/Documents/training/mcp-weather/build/index.js"
-      ],
-      "env": {}
-    },
     "mcp-server-context7": {
       "source": "extension",
       "enabled": true,
@@ -26,52 +17,18 @@
     }
   },
   "agent": {
-    "profiles": {
-      "ask": {
-        "name": "Ask",
-        "tools": {
-          "contents": true,
-          "diagnostics": true,
-          "fetch": true,
-          "list_directory": true,
-          "project_notifications": false,
-          "now": true,
-          "find_path": true,
-          "read_file": true,
-          "open": true,
-          "grep": true,
-          "thinking": true,
-          "web_search": true
-        },
-        "enable_all_context_servers": false,
-        "context_servers": {
-          "mcp-server-context7": {
-            "tools": {
-              "resolve-library-id": true,
-              "get-library-docs": true
-            }
-          },
-          "weather": {
-            "tools": {
-              "get_alerts": true,
-              "get_forecast": true
-            }
-          }
-        }
-      }
-    },
     "default_profile": "write",
     "model_parameters": [],
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-latest"
+      "provider": "openai",
+      "model": "gpt-4.1-mini"
     },
+    "version": "2",
     "notify_when_agent_waiting": "all_screens"
   },
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "edit_predictions": { "mode": "subtle" },
   "theme": {
     "light": "Ayu Light",
     "dark": "Ayu Dark"
@@ -80,7 +37,6 @@
   "git": { "inline_blame": { "delay_ms": 600 } },
   "buffer_font_size": 14,
   "helix_mode": true,
-  // "vim_mode": true,
   "vim": {
     "toggle_relative_line_numbers": true,
     "use_system_clipboard": "on_yank"
